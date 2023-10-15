@@ -7,14 +7,27 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.Divider
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import id.fahrizal.krlcommuterline.MainActivity
 import id.fahrizal.krlcommuterline.R
+import id.fahrizal.krlcommuterline.data.model.StationResult
 import id.fahrizal.krlcommuterline.presentation.common.ClickableText
+import id.fahrizal.krlcommuterline.presentation.common.ErrorWidget
+import id.fahrizal.krlcommuterline.presentation.common.LoadingWidget
+import id.fahrizal.krlcommuterline.presentation.guide.GuideWidget
 
 @Composable
 fun FindScreen (viewModel: FindViewModel){
+    val from = remember{ mutableStateOf(StationResult()) }
+    val to = remember{ mutableStateOf(StationResult()) }
+    val activity = LocalContext.current as MainActivity
+
     Column(modifier = Modifier.fillMaxWidth()) {
         ClickableText(
             label = stringResource(id = R.string.from),
@@ -43,5 +56,13 @@ fun FindScreen (viewModel: FindViewModel){
         }
 
         Divider(modifier = Modifier.padding(top = 8.dp))
+
+        when (val state = viewModel.uiState.collectAsState().value) {
+            is FindViewModel.FindUiState.Loaded -> GuideWidget(state.stations)
+            is FindViewModel.FindUiState.Loading -> LoadingWidget()
+            is FindViewModel.FindUiState.Error -> ErrorWidget(msg = state.msg)
+            is FindViewModel.FindUiState.SelectedFrom -> from.value = state.stationResult
+            is FindViewModel.FindUiState.SelectedTo -> to.value = state.stationResult
+        }
     }
 }

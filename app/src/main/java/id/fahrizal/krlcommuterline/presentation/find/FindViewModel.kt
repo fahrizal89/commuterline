@@ -3,8 +3,12 @@ package id.fahrizal.krlcommuterline.presentation.find
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
+import id.fahrizal.krlcommuterline.data.model.StationResult
+import id.fahrizal.krlcommuterline.domain.model.StationCard
 import id.fahrizal.krlcommuterline.domain.usecase.InitRoute
 import kotlinx.coroutines.CoroutineDispatcher
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import timber.log.Timber
 import java.lang.Exception
@@ -16,6 +20,9 @@ class FindViewModel @Inject constructor(
     private val initRoute: InitRoute
 ): ViewModel(){
 
+    private val _uiState = MutableStateFlow<FindUiState>(FindUiState.Loading)
+    val uiState: StateFlow<FindUiState> = _uiState
+
     init {
         viewModelScope.launch(ioCoroutineDispatcher) {
             try {
@@ -25,6 +32,14 @@ class FindViewModel @Inject constructor(
                 Timber.e(e)
             }
         }
+    }
+
+    sealed class FindUiState {
+        object Loading : FindUiState()
+        class Loaded(val stations : List<StationCard> = ArrayList()) : FindUiState()
+        class Error(val msg:String) : FindUiState()
+        class SelectedFrom(val stationResult: StationResult) : FindUiState()
+        class SelectedTo(val stationResult: StationResult) : FindUiState()
     }
 
 }
