@@ -22,6 +22,8 @@ import id.fahrizal.krlcommuterline.domain.model.StepCardState
 fun GuideWidget (
     StationCards : List<StationCard> = ArrayList()
 ){
+    if(StationCards.isEmpty()) return
+
     LazyColumn(
         modifier = Modifier
             .fillMaxWidth()

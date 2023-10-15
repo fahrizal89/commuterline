@@ -4,6 +4,7 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import id.fahrizal.krlcommuterline.data.algorithm.DijkstraAlgorithm
 import id.fahrizal.krlcommuterline.data.repository.RouteEntityRepository
 import id.fahrizal.krlcommuterline.data.repository.RouteRepository
 import id.fahrizal.krlcommuterline.data.repository.source.LocalRouteEntityData
@@ -31,5 +32,11 @@ class RouteModule {
     @Singleton
     fun provideMockRouteEntityData(mockRouteEntityData: MockRouteEntityData): RouteEntityData {
         return mockRouteEntityData
+    }
+
+    @Provides
+    @Singleton
+    fun provideDijkstraAlgorithm(): DijkstraAlgorithm {
+        return DijkstraAlgorithm()
     }
 }

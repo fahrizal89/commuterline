@@ -5,7 +5,7 @@
     "name": "Tanah Abang",
     "branch": {
       "1": {
-        "codes": ["1-1"]
+        "codes": ["1-99"]
       },
       "99999": {
         "codes": ["1-1"]
@@ -16,11 +16,11 @@
     "id": 1,
     "name": "Palmerah",
     "branch": {
-      "1": {
-        "codes": ["1-1"]
+      "2": {
+        "codes": ["1-99"]
       },
-      "99999": {
-        "codes": ["1-1"]
+      "0": {
+        "codes": ["1-0"]
       }
     }
   },
@@ -29,7 +29,7 @@
     "name": "Kebayoran",
     "branch": {
       "1": {
-        "codes": ["1-1"]
+        "codes": ["1-0"]
       },
       "99999": {
         "codes": ["1-1"]

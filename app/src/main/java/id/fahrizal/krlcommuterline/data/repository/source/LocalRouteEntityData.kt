@@ -14,7 +14,10 @@ class LocalRouteEntityData @Inject constructor(
     }
 
     override suspend fun setRoute(route: Route) {
-        //pending code
+        dijkstraAlgorithm.graph.apply {
+            clear()
+            addAll(route.nodes)
+        }
     }
 
     override suspend fun findShortestRoute(stationIdFrom: Int, stationIdTo: Int): Route {

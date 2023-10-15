@@ -29,6 +29,7 @@ class FindViewModel @Inject constructor(
         viewModelScope.launch(ioCoroutineDispatcher) {
             try {
                 initRoute()
+                _uiState.value = FindUiState.Loaded()
             }
             catch (e: Exception){
                 Timber.e(e)
@@ -44,6 +45,7 @@ class FindViewModel @Inject constructor(
             }
             catch (e: Exception){
                 Timber.e(e)
+                _uiState.value = FindUiState.Error(e.toString())
             }
         }
     }

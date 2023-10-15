@@ -11,10 +11,8 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import id.fahrizal.krlcommuterline.MainActivity
 import id.fahrizal.krlcommuterline.R
 import id.fahrizal.krlcommuterline.data.model.StationResult
 import id.fahrizal.krlcommuterline.presentation.common.ClickableText
@@ -26,7 +24,6 @@ import id.fahrizal.krlcommuterline.presentation.guide.GuideWidget
 fun FindScreen (viewModel: FindViewModel){
     val from = remember{ mutableStateOf(StationResult()) }
     val to = remember{ mutableStateOf(StationResult()) }
-    val activity = LocalContext.current as MainActivity
 
     Column(modifier = Modifier.fillMaxWidth()) {
         ClickableText(
@@ -49,7 +46,7 @@ fun FindScreen (viewModel: FindViewModel){
                 .padding(top = 22.dp, start = 22.dp, end = 22.dp)
                 .fillMaxWidth(),
             onClick = {
-                //pending code
+                viewModel.find(0,2)
             })
         {
             Text(text = "Find")
