@@ -12,7 +12,7 @@ internal class DijkstraAlgorithmTest {
 
     @Before
     fun init(){
-        dijkstraAlgorithm.updateStops(getStops())
+        dijkstraAlgorithm.updateStations(getStations())
     }
 
     @Test
@@ -70,7 +70,7 @@ internal class DijkstraAlgorithmTest {
         Assert.assertEquals(0, route.distance)
     }
 
-    private fun getStops(): List<StationResult>{
+    private fun getStations(): List<StationResult>{
         return ArrayList<StationResult>().apply {
             add(StationResult(0,"a", HashMap<String, StationDetailResult>().apply { put("1", StationDetailResult(distance = 3));put("7",
                 StationDetailResult(distance = 7)

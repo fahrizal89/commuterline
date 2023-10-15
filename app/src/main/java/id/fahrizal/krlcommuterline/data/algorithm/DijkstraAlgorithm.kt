@@ -9,7 +9,7 @@ class DijkstraAlgorithm @Inject constructor(){
 
     val graph: ArrayList<StationResult> = ArrayList()
 
-    fun updateStops(graph: List<StationResult>){
+    fun updateStations(graph: List<StationResult>){
         this.graph.clear()
         this.graph.addAll(graph)
     }
