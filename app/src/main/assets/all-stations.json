@@ -5,7 +5,7 @@
     "name": "Tanah Abang",
     "branch": {
       "1": {
-        "codes": ["1-99"]
+        "codes": ["1-18"]
       },
       "99999": {
         "codes": ["1-1"]
@@ -16,11 +16,11 @@
     "id": 1,
     "name": "Palmerah",
     "branch": {
-      "2": {
-        "codes": ["1-99"]
-      },
       "0": {
         "codes": ["1-0"]
+      },
+      "2": {
+        "codes": ["1-18"]
       }
     }
   },
@@ -31,8 +31,212 @@
       "1": {
         "codes": ["1-0"]
       },
-      "99999": {
-        "codes": ["1-1"]
+      "3": {
+        "codes": ["1-18"]
+      }
+    }
+  },
+  {
+    "id": 3,
+    "name": "Pondok Ranji",
+    "branch": {
+      "2": {
+        "codes": ["1-0"]
+      },
+      "4": {
+        "codes": ["1-18"]
+      }
+    }
+  },
+  {
+    "id": 4,
+    "name": "Jurang Mangu",
+    "branch": {
+      "3": {
+        "codes": ["1-0"]
+      },
+      "5": {
+        "codes": ["1-18"]
+      }
+    }
+  },
+  {
+    "id": 5,
+    "name": "Sudimara",
+    "branch": {
+      "4": {
+        "codes": ["1-0"]
+      },
+      "6": {
+        "codes": ["1-18"]
+      }
+    }
+  },
+  {
+    "id": 6,
+    "name": "Rawa Buntu",
+    "branch": {
+      "5": {
+        "codes": ["1-0"]
+      },
+      "7": {
+        "codes": ["1-18"]
+      }
+    }
+  },
+  {
+    "id": 7,
+    "name": "Serpong",
+    "branch": {
+      "6": {
+        "codes": ["1-0"]
+      },
+      "8": {
+        "codes": ["1-18"]
+      }
+    }
+  },
+  {
+    "id": 8,
+    "name": "Cisauk",
+    "branch": {
+      "7": {
+        "codes": ["1-0"]
+      },
+      "9": {
+        "codes": ["1-18"]
+      }
+    }
+  },
+  {
+    "id": 9,
+    "name": "Cicayur",
+    "branch": {
+      "8": {
+        "codes": ["1-0"]
+      },
+      "10": {
+        "codes": ["1-18"]
+      }
+    }
+  },
+  {
+    "id": 10,
+    "name": "Parung Panjang",
+    "branch": {
+      "9": {
+        "codes": ["1-0"]
+      },
+      "11": {
+        "codes": ["1-18"]
+      }
+    }
+  },
+  {
+    "id": 11,
+    "name": "Cilejit",
+    "branch": {
+      "10": {
+        "codes": ["1-0"]
+      },
+      "12": {
+        "codes": ["1-18"]
+      }
+    }
+  },
+  {
+    "id": 12,
+    "name": "Daru",
+    "branch": {
+      "11": {
+        "codes": ["1-0"]
+      },
+      "13": {
+        "codes": ["1-18"]
+      }
+    }
+  },
+  {
+    "id": 13,
+    "name": "Tenjo",
+    "branch": {
+      "12": {
+        "codes": ["1-0"]
+      },
+      "14": {
+        "codes": ["1-18"]
+      }
+    }
+  },
+  {
+    "id": 14,
+    "name": "Tigaraksa",
+    "branch": {
+      "13": {
+        "codes": ["1-0"]
+      },
+      "15": {
+        "codes": ["1-18"]
+      }
+    }
+  },
+  {
+    "id": 15,
+    "name": "Cikoya",
+    "branch": {
+      "14": {
+        "codes": ["1-0"]
+      },
+      "16": {
+        "codes": ["1-18"]
+      }
+    }
+  },
+  {
+    "id": 16,
+    "name": "Maja",
+    "branch": {
+      "15": {
+        "codes": ["1-0"]
+      },
+      "17": {
+        "codes": ["1-18"]
+      }
+    }
+  },
+  {
+    "id": 17,
+    "name": "Citeras",
+    "branch": {
+      "16": {
+        "codes": ["1-0"]
+      },
+      "18": {
+        "codes": ["1-18"]
+      }
+    }
+  },
+  {
+    "id": 18,
+    "name": "Rangkasbitung",
+    "branch": {
+      "17": {
+        "codes": ["1-0"]
+      },
+      "19": {
+        "codes": ["2-99"]
+      }
+    }
+  },
+  {
+    "id": 19,
+    "name": "Jambubaru",
+    "branch": {
+      "18": {
+        "codes": ["2-18"]
+      },
+      "20": {
+        "codes": ["2-99"]
       }
     }
   }
