@@ -10,5 +10,5 @@ data class StationResult (
     var id:Int?=null,
     var name:String?="",
     @Ignore //ignore inserting to db
-    var route: HashMap<String, StationDetailResult>?=HashMap(),
+    var branch: HashMap<String, StationDetailResult>?=HashMap(),
 )

@@ -1,6 +1,6 @@
 package id.fahrizal.krlcommuterline.data.algorithm
 
-import id.fahrizal.krlcommuterline.data.model.FastestRoute
+import id.fahrizal.krlcommuterline.data.model.Route
 import id.fahrizal.krlcommuterline.data.model.StationResult
 import java.util.Stack
 import javax.inject.Inject
@@ -14,7 +14,7 @@ class DijkstraAlgorithm @Inject constructor(){
         this.graph.addAll(graph)
     }
 
-    fun find(startNode: Int, endNode:Int): FastestRoute {
+    fun find(startNode: Int, endNode:Int): Route {
         val totalVertex= graph.size
         val distance = IntArray(totalVertex)
         val spSet = arrayOfNulls<Boolean>(totalVertex)
@@ -22,7 +22,7 @@ class DijkstraAlgorithm @Inject constructor(){
 
         //handling when start node is not found
         if(startNode > totalVertex-1) {
-            return FastestRoute()
+            return Route()
         }
 
         for (j in 0 until totalVertex) {
@@ -43,9 +43,9 @@ class DijkstraAlgorithm @Inject constructor(){
             for (vx in 0 until totalVertex) {
                 val vxKey = vx.toString()
 
-                val nodeDistance :Int = graph[ux].route?.get(vxKey)?.distance ?: -1
+                val nodeDistance :Int = graph[ux].branch?.get(vxKey)?.distance ?: -1
 
-                if (!spSet[vx]!! && graph[ux].route?.get(vxKey)?.distance != -1 && graph[ux].route?.get(vxKey) != null && distance[ux] != Int.MAX_VALUE && distance[ux] + nodeDistance < distance[vx]) {
+                if (!spSet[vx]!! && graph[ux].branch?.get(vxKey)?.distance != -1 && graph[ux].branch?.get(vxKey) != null && distance[ux] != Int.MAX_VALUE && distance[ux] + nodeDistance < distance[vx]) {
                     distance[vx] = distance[ux] + nodeDistance
 
                     //println("prev: $ux -> visit: $vx with total distance: "+distance[vx])
@@ -56,7 +56,7 @@ class DijkstraAlgorithm @Inject constructor(){
 
         val nodeOfRoute = getNodeOfRoute(prev, endNode)
 
-        return FastestRoute(
+        return Route(
             nodes = nodeOfRoute,
             distance = if(nodeOfRoute.isNotEmpty()) distance[endNode] else 0
         )

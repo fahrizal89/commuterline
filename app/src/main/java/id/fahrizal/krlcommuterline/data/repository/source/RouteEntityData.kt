@@ -1,8 +1,8 @@
 package id.fahrizal.krlcommuterline.data.repository.source
 
-import id.fahrizal.krlcommuterline.data.model.FastestRoute
+import id.fahrizal.krlcommuterline.data.model.Route
 
 interface RouteEntityData {
 
-    suspend fun getRoute(): FastestRoute
+    suspend fun getRoute(): Route
 }
