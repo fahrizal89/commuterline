@@ -14,7 +14,7 @@ import id.fahrizal.krlcommuterline.R
 import id.fahrizal.krlcommuterline.presentation.common.ClickableText
 
 @Composable
-fun FindScreen (){
+fun FindScreen (viewModel: FindViewModel){
     Column(modifier = Modifier.fillMaxWidth()) {
         ClickableText(
             label = stringResource(id = R.string.from),
