@@ -7,4 +7,6 @@ interface RouteEntityData {
     suspend fun getRoute(): Route
 
     suspend fun setRoute(route: Route)
+
+    suspend fun findShortestRoute(stationIdFrom:Int, stationIdTo:Int): Route
 }

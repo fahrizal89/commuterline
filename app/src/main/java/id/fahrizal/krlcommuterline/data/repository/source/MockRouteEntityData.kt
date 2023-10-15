@@ -20,5 +20,9 @@ class MockRouteEntityData @Inject constructor(
         //no op
     }
 
+    override suspend fun findShortestRoute(stationIdFrom: Int, stationIdTo: Int): Route {
+        return Route()
+    }
+
     private fun AssetManager.readAssetsFile(fileName : String): String = open(fileName).bufferedReader().use{it.readText()}
 }

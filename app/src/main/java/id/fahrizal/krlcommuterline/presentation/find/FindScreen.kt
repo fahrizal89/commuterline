@@ -58,7 +58,7 @@ fun FindScreen (viewModel: FindViewModel){
         Divider(modifier = Modifier.padding(top = 8.dp))
 
         when (val state = viewModel.uiState.collectAsState().value) {
-            is FindViewModel.FindUiState.Loaded -> GuideWidget(state.stations)
+            is FindViewModel.FindUiState.Loaded -> GuideWidget(state.stationCards)
             is FindViewModel.FindUiState.Loading -> LoadingWidget()
             is FindViewModel.FindUiState.Error -> ErrorWidget(msg = state.msg)
             is FindViewModel.FindUiState.SelectedFrom -> from.value = state.stationResult

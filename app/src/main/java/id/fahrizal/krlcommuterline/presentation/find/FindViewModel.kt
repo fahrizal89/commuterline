@@ -5,6 +5,7 @@ import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import id.fahrizal.krlcommuterline.data.model.StationResult
 import id.fahrizal.krlcommuterline.domain.model.StationCard
+import id.fahrizal.krlcommuterline.domain.usecase.FindShortestRoute
 import id.fahrizal.krlcommuterline.domain.usecase.InitRoute
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -17,7 +18,8 @@ import javax.inject.Inject
 @HiltViewModel
 class FindViewModel @Inject constructor(
     private val ioCoroutineDispatcher: CoroutineDispatcher,
-    private val initRoute: InitRoute
+    private val initRoute: InitRoute,
+    private val findShortestRoute: FindShortestRoute
 ): ViewModel(){
 
     private val _uiState = MutableStateFlow<FindUiState>(FindUiState.Loading)
@@ -34,9 +36,21 @@ class FindViewModel @Inject constructor(
         }
     }
 
+    fun find(stationIdFrom:Int, stationIdTo:Int){
+        viewModelScope.launch(ioCoroutineDispatcher) {
+            try {
+                val stationCards = findShortestRoute(stationIdFrom, stationIdTo)
+                _uiState.value = FindUiState.Loaded(stationCards)
+            }
+            catch (e: Exception){
+                Timber.e(e)
+            }
+        }
+    }
+
     sealed class FindUiState {
         object Loading : FindUiState()
-        class Loaded(val stations : List<StationCard> = ArrayList()) : FindUiState()
+        class Loaded(val stationCards : List<StationCard> = ArrayList()) : FindUiState()
         class Error(val msg:String) : FindUiState()
         class SelectedFrom(val stationResult: StationResult) : FindUiState()
         class SelectedTo(val stationResult: StationResult) : FindUiState()
