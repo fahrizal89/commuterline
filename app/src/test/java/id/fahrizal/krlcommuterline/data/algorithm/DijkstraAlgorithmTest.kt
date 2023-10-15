@@ -72,37 +72,37 @@ internal class DijkstraAlgorithmTest {
 
     private fun getStops(): List<StationResult>{
         return ArrayList<StationResult>().apply {
-            add(StationResult(0,"a", HashMap<String, StationDetailResult>().apply { put("1", StationDetailResult(dis = 3));put("7",
-                StationDetailResult(dis = 7)
+            add(StationResult(0,"a", HashMap<String, StationDetailResult>().apply { put("1", StationDetailResult(distance = 3));put("7",
+                StationDetailResult(distance = 7)
             ) }))
-            add(StationResult(1,"b", HashMap<String, StationDetailResult>().apply { put("0", StationDetailResult(dis = 3));put("2",
-                StationDetailResult(dis = 7)
-            );put("7", StationDetailResult(dis = 10));put("8", StationDetailResult(dis = 4)) }))
-            add(StationResult(2,"c", HashMap<String, StationDetailResult>().apply { put("1", StationDetailResult(dis = 7));put("3",
-                StationDetailResult(dis = 6)
-            );put("5", StationDetailResult(dis = 2));put("8", StationDetailResult(dis = 1))}))
-            add(StationResult(3,"d", HashMap<String, StationDetailResult>().apply { put("2", StationDetailResult(dis = 6));put("4",
-                StationDetailResult(dis = 8)
-            );put("5", StationDetailResult(dis = 13));put("8", StationDetailResult(dis = 3))}))
-            add(StationResult(4,"e", HashMap<String, StationDetailResult>().apply { put("3", StationDetailResult(dis = 8));put("5",
-                StationDetailResult(dis = 9)
+            add(StationResult(1,"b", HashMap<String, StationDetailResult>().apply { put("0", StationDetailResult(distance = 3));put("2",
+                StationDetailResult(distance = 7)
+            );put("7", StationDetailResult(distance = 10));put("8", StationDetailResult(distance = 4)) }))
+            add(StationResult(2,"c", HashMap<String, StationDetailResult>().apply { put("1", StationDetailResult(distance = 7));put("3",
+                StationDetailResult(distance = 6)
+            );put("5", StationDetailResult(distance = 2));put("8", StationDetailResult(distance = 1))}))
+            add(StationResult(3,"d", HashMap<String, StationDetailResult>().apply { put("2", StationDetailResult(distance = 6));put("4",
+                StationDetailResult(distance = 8)
+            );put("5", StationDetailResult(distance = 13));put("8", StationDetailResult(distance = 3))}))
+            add(StationResult(4,"e", HashMap<String, StationDetailResult>().apply { put("3", StationDetailResult(distance = 8));put("5",
+                StationDetailResult(distance = 9)
             )}))
-            add(StationResult(5,"f", HashMap<String, StationDetailResult>().apply { put("2", StationDetailResult(dis = 2));put("3",
-                StationDetailResult(dis = 13)
-            );put("4", StationDetailResult(dis = 9));put("6", StationDetailResult(dis = 4));put("8",
-                StationDetailResult(dis = 5)
+            add(StationResult(5,"f", HashMap<String, StationDetailResult>().apply { put("2", StationDetailResult(distance = 2));put("3",
+                StationDetailResult(distance = 13)
+            );put("4", StationDetailResult(distance = 9));put("6", StationDetailResult(distance = 4));put("8",
+                StationDetailResult(distance = 5)
             )}))
-            add(StationResult(6,"g", HashMap<String, StationDetailResult>().apply { put("5", StationDetailResult(dis = 4));put("7",
-                StationDetailResult(dis = 2)
-            );put("8", StationDetailResult(dis = 5))}))
-            add(StationResult(7,"h", HashMap<String, StationDetailResult>().apply { put("0", StationDetailResult(dis = 7));put("1",
-                StationDetailResult(dis = 10)
-            );put("6", StationDetailResult(dis = 2));put("8", StationDetailResult(dis = 6))}))
-            add(StationResult(8,"i", HashMap<String, StationDetailResult>().apply { put("1", StationDetailResult(dis = 4));put("2",
-                StationDetailResult(dis = 1)
-            );put("3", StationDetailResult(dis = 3));put("5", StationDetailResult(dis = 5));put("6",
-                StationDetailResult(dis = 5)
-            );put("7", StationDetailResult(dis = 6))}))
+            add(StationResult(6,"g", HashMap<String, StationDetailResult>().apply { put("5", StationDetailResult(distance = 4));put("7",
+                StationDetailResult(distance = 2)
+            );put("8", StationDetailResult(distance = 5))}))
+            add(StationResult(7,"h", HashMap<String, StationDetailResult>().apply { put("0", StationDetailResult(distance = 7));put("1",
+                StationDetailResult(distance = 10)
+            );put("6", StationDetailResult(distance = 2));put("8", StationDetailResult(distance = 6))}))
+            add(StationResult(8,"i", HashMap<String, StationDetailResult>().apply { put("1", StationDetailResult(distance = 4));put("2",
+                StationDetailResult(distance = 1)
+            );put("3", StationDetailResult(distance = 3));put("5", StationDetailResult(distance = 5));put("6",
+                StationDetailResult(distance = 5)
+            );put("7", StationDetailResult(distance = 6))}))
         }
     }
 }
