@@ -67,4 +67,17 @@ fun KrlcommuterlineTheme(
         typography = Typography,
         content = content
     )
+
+//    MaterialTheme(
+//        colorScheme = colorScheme,
+//        typography = Typography,
+//        content = {
+//            Surface(
+//                modifier = Modifier.fillMaxSize(),
+//                color = MaterialTheme.colorScheme.background
+//            ) {
+//                content
+//            }
+//        }
+//    )
 }

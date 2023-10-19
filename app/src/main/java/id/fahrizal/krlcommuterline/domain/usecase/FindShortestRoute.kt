@@ -1,6 +1,6 @@
 package id.fahrizal.krlcommuterline.domain.usecase
 
-import id.fahrizal.krlcommuterline.data.repository.RouteRepository
+import id.fahrizal.krlcommuterline.data.repository.route.RouteRepository
 import id.fahrizal.krlcommuterline.domain.mapper.StationCardMapper.toStationCards
 import id.fahrizal.krlcommuterline.domain.mapper.StationCardCodeMapper.filterDestinations
 import id.fahrizal.krlcommuterline.domain.model.StationCard

@@ -5,11 +5,11 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import id.fahrizal.krlcommuterline.data.algorithm.DijkstraAlgorithm
-import id.fahrizal.krlcommuterline.data.repository.RouteEntityRepository
-import id.fahrizal.krlcommuterline.data.repository.RouteRepository
-import id.fahrizal.krlcommuterline.data.repository.source.LocalRouteEntityData
-import id.fahrizal.krlcommuterline.data.repository.source.MockRouteEntityData
-import id.fahrizal.krlcommuterline.data.repository.source.RouteEntityData
+import id.fahrizal.krlcommuterline.data.repository.route.RouteEntityRepository
+import id.fahrizal.krlcommuterline.data.repository.route.RouteRepository
+import id.fahrizal.krlcommuterline.data.repository.route.source.LocalRouteEntityData
+import id.fahrizal.krlcommuterline.data.repository.route.source.MockRouteEntityData
+import id.fahrizal.krlcommuterline.data.repository.route.source.RouteEntityData
 import javax.inject.Singleton
 
 @InstallIn(SingletonComponent::class)

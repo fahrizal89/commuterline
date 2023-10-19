@@ -2,4 +2,9 @@
     <string name="app_name">KRL Commuterline</string>
     <string name="from">From</string>
     <string name="to">To</string>
+    <string name="find_route">Find Route</string>
+    <string name="find">Find</string>
+    <string name="find_station">Find Station</string>
+    <string name="find_station_hint">type station here</string>
+    <string name="back_button">Back</string>
 </resources>

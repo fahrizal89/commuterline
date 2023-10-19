@@ -1,4 +1,4 @@
-package id.fahrizal.krlcommuterline.data.repository.source
+package id.fahrizal.krlcommuterline.data.repository.route.source
 
 import id.fahrizal.krlcommuterline.data.model.Route
 
