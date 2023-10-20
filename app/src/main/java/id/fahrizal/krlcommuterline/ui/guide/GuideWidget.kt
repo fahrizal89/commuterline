@@ -14,7 +14,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import id.fahrizal.krlcommuterline.R
 import id.fahrizal.krlcommuterline.domain.model.StationCard
 import id.fahrizal.krlcommuterline.domain.model.StepCardState
 
@@ -31,31 +30,31 @@ fun GuideWidget (
     ) {
         val minGroupIndex = StationCards[0].groupIndex
 
-        items(items = StationCards, key = { it.index }) { StationCard->
-            val paddingLeft = (StationCard.groupIndex - minGroupIndex) * 40
-            when (StationCard.state){
+        items(items = StationCards, key = { it.index }) { stationCard->
+            val paddingLeft = (stationCard.groupIndex - minGroupIndex) * 40
+            when (stationCard.state){
                 StepCardState.START -> GuideItemStart(
-                    name = StationCard.name,
-                    colorLineInt = R.color.teal_700,
+                    name = stationCard.name,
+                    colorLineInt = stationCard.lineColor,
                     paddingLeft = paddingLeft
                 )
 
                 StepCardState.STRAIGHT -> GuideItemStraight(
-                    StationCard.name,
-                    colorLineInt = R.color.teal_700,
+                    stationCard.name,
+                    colorLineInt = stationCard.lineColor,
                     paddingLeft = paddingLeft
                 )
 
                 StepCardState.TRANSIT -> GuideItemTransit(
-                    StationCard.name,
-                    colorLineInt = R.color.teal_700,
-                    colorTransitLineInt = R.color.purple_200,
+                    stationCard.name,
+                    colorLineInt = stationCard.lineColor,
+                    colorTransitLineInt = stationCard.lineTransitColor,
                     paddingLeft = paddingLeft
                 )
 
                 StepCardState.END -> GuideItemEnd(
-                    StationCard.name,
-                    colorLineInt = R.color.teal_700,
+                    stationCard.name,
+                    colorLineInt = stationCard.lineColor,
                     paddingLeft = paddingLeft
                 )
             }

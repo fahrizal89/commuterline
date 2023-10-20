@@ -1,5 +1,7 @@
 package id.fahrizal.krlcommuterline.domain.model
 
+import id.fahrizal.krlcommuterline.R
+
 
 class StationCard (
     val index:Int,
@@ -7,7 +9,9 @@ class StationCard (
     val name:String,
     val next:StationCardBranch,
     val state:StepCardState = StepCardState.STRAIGHT,
-    var groupIndex :Int = 0
+    var groupIndex :Int = 0,
+    var lineColor:Int = R.color.teal_700,
+    var lineTransitColor:Int = R.color.teal_700
 )
 
 class StationCardBranch(

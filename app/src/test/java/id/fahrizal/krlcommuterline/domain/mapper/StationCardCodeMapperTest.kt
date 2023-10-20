@@ -1,6 +1,6 @@
 package id.fahrizal.krlcommuterline.domain.mapper
 
-import id.fahrizal.krlcommuterline.domain.mapper.StationCardCodeMapper.filterDestinations
+import id.fahrizal.krlcommuterline.domain.mapper.StationCardCodeMapper.filterDestinationAndSetColor
 import id.fahrizal.krlcommuterline.domain.model.StationCard
 import id.fahrizal.krlcommuterline.domain.model.StationCardBranch
 import org.junit.Assert
@@ -14,7 +14,7 @@ internal class StationCardCodeMapperTest{
         val StationCards = getStationCards()
 
         //when
-        StationCards.filterDestinations()
+        StationCards.filterDestinationAndSetColor()
 
         //then
         //assert group index
@@ -31,7 +31,7 @@ internal class StationCardCodeMapperTest{
         val StationCards = getStationCards()
 
         //when
-        StationCards.filterDestinations()
+        StationCards.filterDestinationAndSetColor()
 
         //then
         //assert user using stationCode "2" only at first time, instead of "2" and "2A"
