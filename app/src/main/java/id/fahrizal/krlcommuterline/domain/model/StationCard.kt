@@ -16,7 +16,7 @@ class StationCard (
 
 class StationCardBranch(
     val id: Int=-1,
-    val name:String="",
+    var name:String="",
     val stationCodes: List<String> = ArrayList()
 )
 

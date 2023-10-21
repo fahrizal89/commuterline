@@ -79,22 +79,22 @@ fun GuideItemTransit(
                 fontWeight = FontWeight.Bold
             )
 
-            Row (modifier = Modifier.padding(start = 2.dp)) {
-                Text(
-                    text = stringResource(id = R.string.change_destination_title),
-                    modifier = Modifier.padding(end=2.dp, top = 2.dp),
-                    fontSize = MaterialTheme.typography.caption.fontSize,
-                    color = colorResource(id = R.color.teal_700),
-                )
 
-                Text(
-                    text = destinationName,
-                    modifier = Modifier.padding(end=2.dp, top = 2.dp),
-                    fontSize = MaterialTheme.typography.caption.fontSize,
-                    color = Color.DarkGray,
-                    fontWeight = FontWeight.Bold
-                )
-            }
+            Text(
+                text = stringResource(id = R.string.change_destination_title),
+                modifier = Modifier.padding(end=2.dp, top = 2.dp),
+                fontSize = MaterialTheme.typography.caption.fontSize,
+                color = colorResource(id = R.color.teal_700),
+            )
+
+            Text(
+                text = destinationName,
+                modifier = Modifier.padding(end=2.dp, top = 2.dp),
+                fontSize = MaterialTheme.typography.caption.fontSize,
+                color = Color.DarkGray,
+                fontWeight = FontWeight.Bold
+            )
+
         }
 
     }
@@ -126,7 +126,7 @@ private fun TransitLine(colorTransitLineInt: Int){
             .width(84.dp)
             .padding(start = 56.dp, top = 44.dp),
         lineColorInt = colorTransitLineInt,
-        heightInt = 24
+        heightInt = 62
     )
 
     Image(

@@ -13,11 +13,15 @@ object StationCardCodeMapper {
 
             if(!currentStationCard.next.stationCodes.isSameDestinationCode(prevStationCard.next.stationCodes)){
                 currentGroup--
+                if(i < this.lastIndex) {
+                    currentStationCard.next.stationCodes.filterStationCode(this[i + 1].next.stationCodes)
+                }
             }
             else {
                 prevStationCard.next.stationCodes.filterStationCode(currentStationCard.next.stationCodes)
             }
             currentStationCard.groupIndex = currentGroup
+            currentStationCard.next.name = currentStationCard.next.stationCodes.getAllDestinationNames()
 
             //set color
             when(currentStationCard.state){
@@ -43,6 +47,7 @@ object StationCardCodeMapper {
 
         this[0].let { firstStation->
             firstStation.groupIndex = currentGroup
+            firstStation.next.name = firstStation.next.stationCodes.getAllDestinationNames()
             firstStation.lineColor = StationLineColorMapper.getLineColor(firstStation.next.stationCodes[0])
         }
 
@@ -69,7 +74,7 @@ object StationCardCodeMapper {
                 val prevBusCode = prevBusInfo.split("-")
                 val newBusCode = newBusInfo.split("-")
 
-                if(prevBusCode[0] == newBusCode[0]){
+                if(prevBusCode[1] == newBusCode[1]){
                     sameValueArrList.add(prevBusInfo)
                 }
             }
@@ -78,5 +83,17 @@ object StationCardCodeMapper {
         this as ArrayList
         clear()
         addAll(sameValueArrList)
+    }
+
+    private fun List<String>.getAllDestinationNames() : String {
+        var destinationNameInStr = ""
+
+        for(i:Int in 0 until this.size){
+            val name = this[i].split("-")[1]
+            if(i>0) destinationNameInStr += ", "
+
+            destinationNameInStr += name
+        }
+        return destinationNameInStr
     }
 }

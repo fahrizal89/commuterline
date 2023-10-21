@@ -26,6 +26,19 @@ internal class StationCardCodeMapperTest{
     }
 
     @Test
+    fun firstStation_have_destinationName_and_only1Destination() {
+        //given
+        val stationCards = getStationCards()
+
+        //when
+        stationCards.filterDestinationAndSetColor()
+
+        //then
+        Assert.assertEquals(1, stationCards[0].next.stationCodes.size)
+        Assert.assertEquals("2-Tanah Abang", stationCards[0].next.stationCodes[0])
+    }
+
+    @Test
     fun filter_station_with_best_stationCodes() {
         //given
         val stationCards = getStationCards()
