@@ -18,11 +18,11 @@ internal class StationCardCodeMapperTest{
 
         //then
         //assert group index
-        Assert.assertEquals(3, StationCards[0].groupIndex)
-        Assert.assertEquals(3, StationCards[1].groupIndex)
-        Assert.assertEquals(3, StationCards[2].groupIndex)
-        Assert.assertEquals(3, StationCards[3].groupIndex)
-        Assert.assertEquals(4, StationCards[4].groupIndex)
+        Assert.assertEquals(4, StationCards[0].groupIndex)
+        Assert.assertEquals(4, StationCards[1].groupIndex)
+        Assert.assertEquals(5, StationCards[2].groupIndex)
+        Assert.assertEquals(5, StationCards[3].groupIndex)
+        Assert.assertEquals(5, StationCards[4].groupIndex)
     }
 
     @Test
@@ -36,33 +36,37 @@ internal class StationCardCodeMapperTest{
         //then
         //assert user using stationCode "2" only at first time, instead of "2" and "2A"
         Assert.assertEquals(1, StationCards[0].next.stationCodes.size)
-        Assert.assertEquals("2", StationCards[0].next.stationCodes[0])
+        Assert.assertEquals("2-Tanah Abang", StationCards[0].next.stationCodes[0])
 
         //assert index 3 next station will be transit station, then stationCode should be "1"
-        Assert.assertEquals("1", StationCards[3].next.stationCodes[0])
+        Assert.assertEquals("1-Parung Panjang", StationCards[3].next.stationCodes[0])
     }
 
     private fun getStationCards() : List<StationCard> {
         return ArrayList<StationCard>().apply {
             add(
-                StationCard(0, 0,"Pondok Ranji", next = StationCardBranch(1, ArrayList<String>().apply { add("2");add("2A") }))
+                StationCard(0, 0,"Karet", next = StationCardBranch(5, "Tanah Abang",ArrayList<String>().apply { add("2-Tanah Abang") }))
             )
 
             add(
-                StationCard(1, 1,"Kebayoran", next = StationCardBranch(2, ArrayList<String>().apply { add("2");add("2A") }))
+                StationCard(1, 1,"Tanah Abang", next = StationCardBranch(4, "Serpong",ArrayList<String>().apply { add("1-Serpong");add("1-Parung Panjang") }))
             )
 
             add(
-                StationCard(2, 2,"Palmerah", next = StationCardBranch(2, ArrayList<String>().apply { add("2") }))
+                StationCard(2, 2,"Palmerah", next = StationCardBranch(3, "Serpong",ArrayList<String>().apply { add("1-Serpong");add("1-Parung Panjang") }))
             )
 
             add(
-                StationCard(3, 3,"Tanah Abang", next = StationCardBranch(2, ArrayList<String>().apply { add("1") }))
+                StationCard(3, 3,"Serpong", next = StationCardBranch(2, "Serpong",ArrayList<String>().apply { add("1-Serpong");add("1-Parung Panjang")}))
             )
 
             add(
-                StationCard(4, 4,"Karet", next = StationCardBranch())
+                StationCard(4, 4,"Parung Panjang", next = StationCardBranch(1, "Parung Panjang",ArrayList<String>().apply { add("1-Parung Panjang") }))
             )
+
+
+
+
         }
     }
 }
