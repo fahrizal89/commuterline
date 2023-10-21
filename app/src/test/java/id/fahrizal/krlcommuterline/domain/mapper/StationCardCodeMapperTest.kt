@@ -11,35 +11,46 @@ internal class StationCardCodeMapperTest{
     @Test
     fun filter_stations_with_transit_at_index4() {
         //given
-        val StationCards = getStationCards()
+        val stationCards = getStationCards()
 
         //when
-        StationCards.filterDestinationAndSetColor()
+        stationCards.filterDestinationAndSetColor()
 
         //then
         //assert group index
-        Assert.assertEquals(4, StationCards[0].groupIndex)
-        Assert.assertEquals(4, StationCards[1].groupIndex)
-        Assert.assertEquals(5, StationCards[2].groupIndex)
-        Assert.assertEquals(5, StationCards[3].groupIndex)
-        Assert.assertEquals(5, StationCards[4].groupIndex)
+        Assert.assertEquals(4, stationCards[0].groupIndex)
+        Assert.assertEquals(4, stationCards[1].groupIndex)
+        Assert.assertEquals(5, stationCards[2].groupIndex)
+        Assert.assertEquals(5, stationCards[3].groupIndex)
+        Assert.assertEquals(5, stationCards[4].groupIndex)
     }
 
     @Test
     fun filter_station_with_best_stationCodes() {
         //given
-        val StationCards = getStationCards()
+        val stationCards = getStationCards()
 
         //when
-        StationCards.filterDestinationAndSetColor()
+        stationCards.filterDestinationAndSetColor()
 
         //then
-        //assert user using stationCode "2" only at first time, instead of "2" and "2A"
-        Assert.assertEquals(1, StationCards[0].next.stationCodes.size)
-        Assert.assertEquals("2-Tanah Abang", StationCards[0].next.stationCodes[0])
+        Assert.assertEquals(1, stationCards[1].next.stationCodes.size)
+        Assert.assertEquals("1-Parung Panjang", stationCards[1].next.stationCodes[0])
+    }
 
-        //assert index 3 next station will be transit station, then stationCode should be "1"
-        Assert.assertEquals("1-Parung Panjang", StationCards[3].next.stationCodes[0])
+    @Test
+    fun filter_station_shouldHave_2_stationCodes() {
+        //given
+        val stationCards = getStationCards()
+        (stationCards as ArrayList).removeAt(stationCards.lastIndex)
+
+        //when
+        stationCards.filterDestinationAndSetColor()
+
+        //then
+        Assert.assertEquals(2, stationCards[1].next.stationCodes.size)
+        Assert.assertEquals("1-Serpong", stationCards[1].next.stationCodes[0])
+        Assert.assertEquals("1-Parung Panjang", stationCards[1].next.stationCodes[1])
     }
 
     private fun getStationCards() : List<StationCard> {
