@@ -5,7 +5,7 @@
       "name": "Tanah Abang",
       "branch": {
         "1": {
-          "codes": ["1-Rangkas Bitung"]
+          "codes": ["1-Serpong","1-Parung Panjang","1-Rangkas Bitung"]
         },
         "19": {
           "codes": ["2-Cikarang"]
@@ -20,7 +20,7 @@
           "codes": ["1-Tanah Abang"]
         },
         "2": {
-          "codes": ["1-Rangkas Bitung"]
+          "codes": ["1-Serpong","1-Parung Panjang","1-Rangkas Bitung"]
         }
       }
     },
@@ -32,7 +32,7 @@
           "codes": ["1-Tanah Abang"]
         },
         "3": {
-          "codes": ["1-Rangkas Bitung"]
+          "codes": ["1-Serpong","1-Parung Panjang","1-Rangkas Bitung"]
         }
       }
     },
@@ -44,7 +44,7 @@
           "codes": ["1-Tanah Abang"]
         },
         "4": {
-          "codes": ["1-Rangkas Bitung"]
+          "codes": ["1-Serpong","1-Parung Panjang","1-Rangkas Bitung"]
         }
       }
     },
@@ -56,7 +56,7 @@
           "codes": ["1-Tanah Abang"]
         },
         "5": {
-          "codes": ["1-Rangkas Bitung"]
+          "codes": ["1-Serpong","1-Parung Panjang","1-Rangkas Bitung"]
         }
       }
     },
@@ -68,7 +68,7 @@
           "codes": ["1-Tanah Abang"]
         },
         "6": {
-          "codes": ["1-Rangkas Bitung"]
+          "codes": ["1-Serpong","1-Parung Panjang","1-Rangkas Bitung"]
         }
       }
     },
@@ -80,7 +80,7 @@
           "codes": ["1-Tanah Abang"]
         },
         "7": {
-          "codes": ["1-Rangkas Bitung"]
+          "codes": ["1-Serpong","1-Parung Panjang","1-Rangkas Bitung"]
         }
       }
     },
@@ -92,7 +92,7 @@
           "codes": ["1-Tanah Abang"]
         },
         "8": {
-          "codes": ["1-Rangkas Bitung"]
+          "codes": ["1-Serpong","1-Parung Panjang","1-Rangkas Bitung"]
         }
       }
     },
@@ -104,7 +104,7 @@
           "codes": ["1-Tanah Abang"]
         },
         "9": {
-          "codes": ["1-Rangkas Bitung"]
+          "codes": ["1-Parung Panjang","1-Rangkas Bitung"]
         }
       }
     },
@@ -116,7 +116,7 @@
           "codes": ["1-Tanah Abang"]
         },
         "10": {
-          "codes": ["1-Rangkas Bitung"]
+          "codes": ["1-Parung Panjang","1-Rangkas Bitung"]
         }
       }
     },
