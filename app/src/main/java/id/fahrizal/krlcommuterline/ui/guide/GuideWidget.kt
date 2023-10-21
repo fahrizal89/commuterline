@@ -35,25 +35,27 @@ fun GuideWidget (
             when (stationCard.state){
                 StepCardState.START -> GuideItemStart(
                     name = stationCard.name,
+                    destinationName = stationCard.next.name,
                     colorLineInt = stationCard.lineColor,
                     paddingLeft = paddingLeft
                 )
 
                 StepCardState.STRAIGHT -> GuideItemStraight(
-                    stationCard.name,
+                    name = stationCard.name,
                     colorLineInt = stationCard.lineColor,
                     paddingLeft = paddingLeft
                 )
 
                 StepCardState.TRANSIT -> GuideItemTransit(
-                    stationCard.name,
+                    name = stationCard.name,
+                    destinationName = stationCard.next.name,
                     colorLineInt = stationCard.lineColor,
                     colorTransitLineInt = stationCard.lineTransitColor,
                     paddingLeft = paddingLeft
                 )
 
                 StepCardState.END -> GuideItemEnd(
-                    stationCard.name,
+                    name = stationCard.name,
                     colorLineInt = stationCard.lineColor,
                     paddingLeft = paddingLeft
                 )

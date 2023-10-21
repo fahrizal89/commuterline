@@ -15,6 +15,7 @@ import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import id.fahrizal.krlcommuterline.R
@@ -22,6 +23,7 @@ import id.fahrizal.krlcommuterline.R
 @Composable
 fun GuideItemTransit(
     name:String,
+    destinationName:String,
     colorLineInt :Int,
     colorTransitLineInt :Int,
     colorDotInt :Int= R.color.white,
@@ -63,19 +65,36 @@ fun GuideItemTransit(
 
         Column {
             Text(
+                text = stringResource(id = R.string.transit_title),
+                modifier = Modifier.padding(end=2.dp, top = 2.dp),
+                fontSize = MaterialTheme.typography.caption.fontSize,
+                color = colorResource(id = R.color.teal_700),
+            )
+            
+            Text(
                 text = name,
-                modifier = Modifier.padding(start = 8.dp, end=2.dp, bottom = 2.dp, top = 8.dp),
+                modifier = Modifier.padding(end=2.dp, bottom = 2.dp, top = 2.dp),
                 fontSize = MaterialTheme.typography.subtitle1.fontSize,
                 color = Color.DarkGray,
                 fontWeight = FontWeight.Bold
             )
 
-            Text(
-                text = "Transit",
-                modifier = Modifier.padding(start = 8.dp, end=2.dp, bottom = 2.dp, top = 1.dp),
-                fontSize = MaterialTheme.typography.caption.fontSize,
-                color = colorResource(id = R.color.teal_700),
-            )
+            Row (modifier = Modifier.padding(start = 2.dp)) {
+                Text(
+                    text = stringResource(id = R.string.change_destination_title),
+                    modifier = Modifier.padding(end=2.dp, top = 2.dp),
+                    fontSize = MaterialTheme.typography.caption.fontSize,
+                    color = colorResource(id = R.color.teal_700),
+                )
+
+                Text(
+                    text = destinationName,
+                    modifier = Modifier.padding(end=2.dp, top = 2.dp),
+                    fontSize = MaterialTheme.typography.caption.fontSize,
+                    color = Color.DarkGray,
+                    fontWeight = FontWeight.Bold
+                )
+            }
         }
 
     }

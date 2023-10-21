@@ -5,10 +5,10 @@
       "name": "Tanah Abang",
       "branch": {
         "1": {
-          "codes": ["1-18"]
+          "codes": ["1-Rangkas Bitung"]
         },
         "19": {
-          "codes": ["2-35"]
+          "codes": ["2-Cikarang"]
         }
       }
     },
@@ -17,10 +17,10 @@
       "name": "Palmerah",
       "branch": {
         "0": {
-          "codes": ["1-0"]
+          "codes": ["1-Tanah Abang"]
         },
         "2": {
-          "codes": ["1-18"]
+          "codes": ["1-Rangkas Bitung"]
         }
       }
     },
@@ -29,10 +29,10 @@
       "name": "Kebayoran",
       "branch": {
         "1": {
-          "codes": ["1-0"]
+          "codes": ["1-Tanah Abang"]
         },
         "3": {
-          "codes": ["1-18"]
+          "codes": ["1-Rangkas Bitung"]
         }
       }
     },
@@ -41,10 +41,10 @@
       "name": "Pondok Ranji",
       "branch": {
         "2": {
-          "codes": ["1-0"]
+          "codes": ["1-Tanah Abang"]
         },
         "4": {
-          "codes": ["1-18"]
+          "codes": ["1-Rangkas Bitung"]
         }
       }
     },
@@ -53,10 +53,10 @@
       "name": "Jurang Mangu",
       "branch": {
         "3": {
-          "codes": ["1-0"]
+          "codes": ["1-Tanah Abang"]
         },
         "5": {
-          "codes": ["1-18"]
+          "codes": ["1-Rangkas Bitung"]
         }
       }
     },
@@ -65,10 +65,10 @@
       "name": "Sudimara",
       "branch": {
         "4": {
-          "codes": ["1-0"]
+          "codes": ["1-Tanah Abang"]
         },
         "6": {
-          "codes": ["1-18"]
+          "codes": ["1-Rangkas Bitung"]
         }
       }
     },
@@ -77,10 +77,10 @@
       "name": "Rawa Buntu",
       "branch": {
         "5": {
-          "codes": ["1-0"]
+          "codes": ["1-Tanah Abang"]
         },
         "7": {
-          "codes": ["1-18"]
+          "codes": ["1-Rangkas Bitung"]
         }
       }
     },
@@ -89,10 +89,10 @@
       "name": "Serpong",
       "branch": {
         "6": {
-          "codes": ["1-0"]
+          "codes": ["1-Tanah Abang"]
         },
         "8": {
-          "codes": ["1-18"]
+          "codes": ["1-Rangkas Bitung"]
         }
       }
     },
@@ -101,10 +101,10 @@
       "name": "Cisauk",
       "branch": {
         "7": {
-          "codes": ["1-0"]
+          "codes": ["1-Tanah Abang"]
         },
         "9": {
-          "codes": ["1-18"]
+          "codes": ["1-Rangkas Bitung"]
         }
       }
     },
@@ -113,10 +113,10 @@
       "name": "Cicayur",
       "branch": {
         "8": {
-          "codes": ["1-0"]
+          "codes": ["1-Tanah Abang"]
         },
         "10": {
-          "codes": ["1-18"]
+          "codes": ["1-Rangkas Bitung"]
         }
       }
     },
@@ -125,10 +125,10 @@
       "name": "Parung Panjang",
       "branch": {
         "9": {
-          "codes": ["1-0"]
+          "codes": ["1-Tanah Abang"]
         },
         "11": {
-          "codes": ["1-18"]
+          "codes": ["1-Rangkas Bitung"]
         }
       }
     },
@@ -137,10 +137,10 @@
       "name": "Cilejit",
       "branch": {
         "10": {
-          "codes": ["1-0"]
+          "codes": ["1-Tanah Abang"]
         },
         "12": {
-          "codes": ["1-18"]
+          "codes": ["1-Rangkas Bitung"]
         }
       }
     },
@@ -149,10 +149,10 @@
       "name": "Daru",
       "branch": {
         "11": {
-          "codes": ["1-0"]
+          "codes": ["1-Tanah Abang"]
         },
         "13": {
-          "codes": ["1-18"]
+          "codes": ["1-Rangkas Bitung"]
         }
       }
     },
@@ -161,10 +161,10 @@
       "name": "Tenjo",
       "branch": {
         "12": {
-          "codes": ["1-0"]
+          "codes": ["1-Tanah Abang"]
         },
         "14": {
-          "codes": ["1-18"]
+          "codes": ["1-Rangkas Bitung"]
         }
       }
     },
@@ -173,10 +173,10 @@
       "name": "Tigaraksa",
       "branch": {
         "13": {
-          "codes": ["1-0"]
+          "codes": ["1-Tanah Abang"]
         },
         "15": {
-          "codes": ["1-18"]
+          "codes": ["1-Rangkas Bitung"]
         }
       }
     },
@@ -185,10 +185,10 @@
       "name": "Cikoya",
       "branch": {
         "14": {
-          "codes": ["1-0"]
+          "codes": ["1-Tanah Abang"]
         },
         "16": {
-          "codes": ["1-18"]
+          "codes": ["1-Rangkas Bitung"]
         }
       }
     },
@@ -197,10 +197,10 @@
       "name": "Maja",
       "branch": {
         "15": {
-          "codes": ["1-0"]
+          "codes": ["1-Tanah Abang"]
         },
         "17": {
-          "codes": ["1-18"]
+          "codes": ["1-Rangkas Bitung"]
         }
       }
     },
@@ -209,10 +209,10 @@
       "name": "Citeras",
       "branch": {
         "16": {
-          "codes": ["1-0"]
+          "codes": ["1-Tanah Abang"]
         },
         "18": {
-          "codes": ["1-18"]
+          "codes": ["1-Rangkas Bitung"]
         }
       }
     },
@@ -221,7 +221,7 @@
       "name": "Rangkasbitung",
       "branch": {
         "17": {
-          "codes": ["1-0"]
+          "codes": ["1-Tanah Abang"]
         },
         "9999": {
           "codes": ["777-777"]
@@ -233,10 +233,10 @@
       "name": "Karet",
       "branch": {
         "0": {
-          "codes": ["2-0"]
+          "codes": ["2-Tanah Abang"]
         },
         "20": {
-          "codes": ["2-35"]
+          "codes": ["2-Cikarang"]
         }
       }
     },
@@ -245,10 +245,10 @@
       "name": "BNI City",
       "branch": {
         "19": {
-          "codes": ["2-0"]
+          "codes": ["2-Tanah Abang"]
         },
         "21": {
-          "codes": ["2-35"]
+          "codes": ["2-Cikarang"]
         }
       }
     },
@@ -257,10 +257,10 @@
       "name": "Sudirman",
       "branch": {
         "20": {
-          "codes": ["2-0"]
+          "codes": ["2-Tanah Abang"]
         },
         "22": {
-          "codes": ["2-35"]
+          "codes": ["2-Cikarang"]
         }
       }
     },
@@ -269,10 +269,10 @@
       "name": "Manggarai",
       "branch": {
         "21": {
-          "codes": ["2-0"]
+          "codes": ["2-Tanah Abang"]
         },
         "23": {
-          "codes": ["2-35"]
+          "codes": ["2-Cikarang"]
         }
       }
     },
@@ -281,10 +281,10 @@
       "name": "Matraman",
       "branch": {
         "22": {
-          "codes": ["2-0"]
+          "codes": ["2-Tanah Abang"]
         },
         "24": {
-          "codes": ["2-35"]
+          "codes": ["2-Cikarang"]
         }
       }
     },
@@ -293,10 +293,10 @@
       "name": "Jatinegara",
       "branch": {
         "23": {
-          "codes": ["2-0"]
+          "codes": ["2-Tanah Abang"]
         },
         "25": {
-          "codes": ["2-35"]
+          "codes": ["2-Cikarang"]
         }
       }
     },
@@ -305,10 +305,10 @@
       "name": "Klender",
       "branch": {
         "24": {
-          "codes": ["2-0"]
+          "codes": ["2-Tanah Abang"]
         },
         "26": {
-          "codes": ["2-35"]
+          "codes": ["2-Cikarang"]
         }
       }
     },
@@ -317,10 +317,10 @@
       "name": "Buaran",
       "branch": {
         "25": {
-          "codes": ["2-0"]
+          "codes": ["2-Tanah Abang"]
         },
         "27": {
-          "codes": ["2-35"]
+          "codes": ["2-Cikarang"]
         }
       }
     },
@@ -329,10 +329,10 @@
       "name": "Klender Baru",
       "branch": {
         "26": {
-          "codes": ["2-0"]
+          "codes": ["2-Tanah Abang"]
         },
         "28": {
-          "codes": ["2-35"]
+          "codes": ["2-Cikarang"]
         }
       }
     },
@@ -341,10 +341,10 @@
       "name": "Cakung",
       "branch": {
         "27": {
-          "codes": ["2-0"]
+          "codes": ["2-Tanah Abang"]
         },
         "29": {
-          "codes": ["2-35"]
+          "codes": ["2-Cikarang"]
         }
       }
     },
@@ -353,10 +353,10 @@
       "name": "Kranji",
       "branch": {
         "28": {
-          "codes": ["2-0"]
+          "codes": ["2-Tanah Abang"]
         },
         "30": {
-          "codes": ["2-35"]
+          "codes": ["2-Cikarang"]
         }
       }
     },
@@ -365,10 +365,10 @@
       "name": "Bekasi",
       "branch": {
         "29": {
-          "codes": ["2-0"]
+          "codes": ["2-Tanah Abang"]
         },
         "31": {
-          "codes": ["2-35"]
+          "codes": ["2-Cikarang"]
         }
       }
     },
@@ -377,10 +377,10 @@
       "name": "Bekasi Timur",
       "branch": {
         "30": {
-          "codes": ["2-0"]
+          "codes": ["2-Tanah Abang"]
         },
         "32": {
-          "codes": ["2-35"]
+          "codes": ["2-Cikarang"]
         }
       }
     },
@@ -389,10 +389,10 @@
       "name": "Tambun",
       "branch": {
         "31": {
-          "codes": ["2-0"]
+          "codes": ["2-Tanah Abang"]
         },
         "33": {
-          "codes": ["2-35"]
+          "codes": ["2-Cikarang"]
         }
       }
     },
@@ -401,10 +401,10 @@
       "name": "Cibitung",
       "branch": {
         "32": {
-          "codes": ["2-0"]
+          "codes": ["2-Tanah Abang"]
         },
         "34": {
-          "codes": ["2-35"]
+          "codes": ["2-Cikarang"]
         }
       }
     },
@@ -413,10 +413,10 @@
       "name": "Metland Telaga Murni",
       "branch": {
         "33": {
-          "codes": ["2-0"]
+          "codes": ["2-Tanah Abang"]
         },
         "35": {
-          "codes": ["2-35"]
+          "codes": ["2-Cikarang"]
         }
       }
     },
@@ -425,7 +425,7 @@
       "name": "Cikarang",
       "branch": {
         "34": {
-          "codes": ["2-0"]
+          "codes": ["2-Tanah Abang"]
         },
         "999": {
           "codes": ["99-99"]

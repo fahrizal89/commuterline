@@ -15,7 +15,12 @@ object StationCardMapper {
         for (i:Int in 0 until this.size){
             val station = this[i]
             val nextStationCardBranch = if(i < this.lastIndex) {
-                StationCardBranch(this[i+1].id ?: -1, this.getStationCodesFromStationResult(i))
+                val stationCodes = this.getStationCodesFromStationResult(i)
+                StationCardBranch(
+                    id =this[i+1].id ?: -1,
+                    name = stationCodes[0].getLastDestination(),
+                    stationCodes = stationCodes
+                )
             } else {
                 StationCardBranch()
             }
@@ -49,4 +54,6 @@ object StationCardMapper {
 
         return StepCardState.STRAIGHT
     }
+
+    private fun String.getLastDestination() : String = this.split("-")[1]
 }
