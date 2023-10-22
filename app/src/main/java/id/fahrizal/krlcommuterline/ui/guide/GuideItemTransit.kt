@@ -29,7 +29,7 @@ fun GuideItemTransit(
     colorDotInt :Int= R.color.white,
     paddingLeft:Int
 ){
-    Row(modifier = Modifier.padding(start = paddingLeft.dp, bottom = 8.dp)) {
+    Row(modifier = Modifier.padding(start = paddingLeft.dp)) {
         Box(
             modifier = Modifier.width(100.dp),
         ) {
@@ -38,7 +38,7 @@ fun GuideItemTransit(
 
             VerticalLine(
                 modifier = Modifier.padding(start = 29.dp),
-                height = 50f,
+                height = 10.dp,
                 color = colorResource(id = colorLineInt)
             )
 
@@ -109,7 +109,7 @@ private fun TransitLine(colorTransitLineInt: Int){
         modifier = Modifier
             .fillMaxWidth()
             .padding(start = 70.dp, top = 44.dp),
-        height= 140f,
+        height= 40.dp,
         color = colorResource(id = colorTransitLineInt)
     )
 
@@ -127,7 +127,7 @@ private fun AnotherLine(){
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(start = 29.dp, top = 24.dp),
-            height = 300f,
+            height = 120.dp,
             color = colorResource(id = androidx.appcompat.R.color.material_grey_300)
         )
 
