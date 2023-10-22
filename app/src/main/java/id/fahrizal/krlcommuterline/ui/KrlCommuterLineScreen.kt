@@ -43,7 +43,7 @@ fun KrlCommuterLineApp(
 
     Scaffold(
         topBar = {
-            LunchTrayAppBar(
+            AppBar(
                 currentScreenTitle = currentScreen.title,
                 canNavigateBack = navController.previousBackStackEntry != null,
                 navigateUp = { navController.navigateUp() }
@@ -95,7 +95,7 @@ fun KrlCommuterLineApp(
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun LunchTrayAppBar(
+fun AppBar(
     @StringRes currentScreenTitle: Int,
     canNavigateBack: Boolean,
     navigateUp: () -> Unit,
