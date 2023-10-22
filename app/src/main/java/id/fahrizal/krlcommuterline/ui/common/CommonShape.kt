@@ -41,3 +41,15 @@ fun VerticalLine(modifier: Modifier = Modifier, width:Dp = 18.dp, height:Dp, col
         )
     }
 }
+
+@Composable
+fun XLine(modifier: Modifier = Modifier, width:Dp = 18.dp, x:Dp=0.dp, height:Dp, color: Color = Color.DarkGray){
+    Canvas(modifier = modifier) {
+        drawLine(
+            start = Offset(x = 0f, y = 0f),
+            end = Offset(x = x.toPx(), y = height.toPx()),
+            color = color,
+            strokeWidth = width.toPx()
+        )
+    }
+}

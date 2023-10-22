@@ -11,14 +11,15 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import id.fahrizal.krlcommuterline.R
 import id.fahrizal.krlcommuterline.ui.common.DotCircle
 import id.fahrizal.krlcommuterline.ui.common.VerticalLine
+import id.fahrizal.krlcommuterline.ui.common.XLine
 
 @Composable
 fun GuideItemTransit(
@@ -31,7 +32,7 @@ fun GuideItemTransit(
 ){
     Row(modifier = Modifier.padding(start = paddingLeft.dp)) {
         Box(
-            modifier = Modifier.width(100.dp),
+            modifier = Modifier.width(92.dp),
         ) {
             AnotherLine()
             TransitLine(colorTransitLineInt)
@@ -49,20 +50,13 @@ fun GuideItemTransit(
             )
 
             DotCircle(
-                modifier = Modifier.padding(start = 20.dp, top = 10.dp),
+                modifier = Modifier.padding(start = 21.dp, top = 12.dp),
                 color = colorResource(id = colorDotInt)
             )
 
         }
 
         Column {
-            Text(
-                text = stringResource(id = R.string.transit_title),
-                modifier = Modifier.padding(end=2.dp, top = 2.dp),
-                fontSize = MaterialTheme.typography.caption.fontSize,
-                color = colorResource(id = R.color.teal_700),
-            )
-            
             Text(
                 text = name,
                 modifier = Modifier.padding(end=2.dp, bottom = 2.dp, top = 2.dp),
@@ -71,22 +65,24 @@ fun GuideItemTransit(
                 fontWeight = FontWeight.Bold
             )
 
+            Row {
+                Text(
+                    text = stringResource(id = R.string.transit_to_title),
+                    modifier = Modifier.padding(end=2.dp, top = 2.dp),
+                    fontSize = MaterialTheme.typography.caption.fontSize,
+                    color = colorResource(id = R.color.teal_700),
+                )
 
-            Text(
-                text = stringResource(id = R.string.change_destination_title),
-                modifier = Modifier.padding(end=2.dp, top = 2.dp),
-                fontSize = MaterialTheme.typography.caption.fontSize,
-                color = colorResource(id = R.color.teal_700),
-            )
-
-            Text(
-                text = destinationName,
-                modifier = Modifier.padding(end=2.dp, top = 2.dp),
-                fontSize = MaterialTheme.typography.caption.fontSize,
-                color = Color.DarkGray,
-                fontWeight = FontWeight.Bold
-            )
-
+                Text(
+                    text = destinationName,
+                    modifier = Modifier.padding(end=2.dp, top = 2.dp),
+                    fontSize = MaterialTheme.typography.caption.fontSize,
+                    color = Color.DarkGray,
+                    fontWeight = FontWeight.Bold,
+                    maxLines = 1,
+                    overflow = TextOverflow.Ellipsis
+                )
+            }
         }
 
     }
@@ -94,15 +90,14 @@ fun GuideItemTransit(
 
 @Composable
 private fun TransitLine(colorTransitLineInt: Int){
-    Line(
+    XLine(
         modifier = Modifier
-            .width(80.dp)
-            .padding(start = 20.dp, top = 22.dp)
-            .graphicsLayer {
-                this.rotationZ = 30f
-            },
-        lineColorInt = colorTransitLineInt,
-        heightInt = 18
+            .fillMaxWidth()
+            .padding(start = 20.dp, top = 16.dp),
+        x = 50.dp,
+        height= 26.dp,
+        width = 14.dp,
+        color = colorResource(id = colorTransitLineInt)
     )
 
     VerticalLine(
@@ -115,26 +110,20 @@ private fun TransitLine(colorTransitLineInt: Int){
 
     //corner
     DotCircle(
-        modifier = Modifier.padding(start = 60.dp, top = 33.dp),
-        size = 20,
+        modifier = Modifier.padding(start = 59.dp, top = 33.dp),
+        size = 21,
         color = colorResource(id = colorTransitLineInt)
     )
 }
 
 @Composable
 private fun AnotherLine(){
-    Box {
-        VerticalLine(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(start = 29.dp, top = 24.dp),
-            height = 120.dp,
-            color = colorResource(id = androidx.appcompat.R.color.material_grey_300)
-        )
-
-        DotCircle(
-            modifier = Modifier.padding(start = 20.dp, top = 64.dp),
-            color = colorResource(id = R.color.white)
-        )
-    }
+    VerticalLine(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(start = 29.dp, top = 24.dp),
+        width = 12.dp,
+        height = 100.dp,
+        color = colorResource(id = androidx.appcompat.R.color.material_grey_300)
+    )
 }

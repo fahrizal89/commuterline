@@ -8,7 +8,6 @@
     <string name="find_station_hint">type station here</string>
     <string name="back_button">Back</string>
 
-    <string name="transit_title">Transit at</string>
-    <string name="change_destination_title">Change destination to</string>
+    <string name="transit_to_title">Transit to destination</string>
     <string name="destination_title">Destination</string>
 </resources>
