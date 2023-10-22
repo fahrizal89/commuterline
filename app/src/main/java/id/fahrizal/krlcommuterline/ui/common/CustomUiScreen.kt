@@ -22,10 +22,6 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.unit.dp
 import id.fahrizal.krlcommuterline.R
-import kotlinx.coroutines.Job
-import kotlinx.coroutines.MainScope
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
 
 
 @Composable
@@ -38,22 +34,15 @@ fun ErrorWidget(msg:String){
     Text(text = msg)
 }
 @Composable
-fun DebouncedEditText(
+fun IconEditText(
     modifier: Modifier,
     text: String="",
-    delayInMillis: Long= 2000,
     onTextChanged: (String) -> Unit,
     label: String="",
     hint:String="",
     singleLine: Boolean = true,
     keyboardType: KeyboardType = KeyboardType.Text,
-    enabled: Boolean = true,
 ) {
-    val internalText = remember { mutableStateOf(text) }
-    val debouncedText = remember { mutableStateOf("") }
-    val prevDebouncedText = remember { mutableStateOf("") }
-    val job = remember { mutableStateOf<Job?>(null) }
-
     var textField by remember {
         mutableStateOf(TextFieldValue(text))
     }
@@ -77,27 +66,13 @@ fun DebouncedEditText(
             value = textField,
             onValueChange = {
                 textField = it
-                internalText.value = it.text
-                // Cancel the previous job if it exists
-                job.value?.cancel()
-
-                // Start a new debounce job
-                job.value = MainScope().launch {
-                    delay(delayInMillis) // Debounce delay: 2000 milliseconds (2 seconds)
-                    debouncedText.value = it.text
-                }
+                onTextChanged(it.text)
             },
             placeholder = { Text(hint) },
             singleLine = singleLine,
             keyboardOptions = keyboardOptions,
-            enabled = enabled,
             modifier = modifier
         )
-    }
-
-    if(prevDebouncedText.value != debouncedText.value) {
-        onTextChanged(debouncedText.value)
-        prevDebouncedText.value = debouncedText.value
     }
 }
 
