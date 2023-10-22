@@ -1,9 +1,9 @@
 package id.fahrizal.krlcommuterline.ui.guide
 
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.material.MaterialTheme
@@ -11,14 +11,14 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.res.colorResource
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import id.fahrizal.krlcommuterline.R
+import id.fahrizal.krlcommuterline.ui.common.DotCircle
+import id.fahrizal.krlcommuterline.ui.common.VerticalLine
 
 @Composable
 fun GuideItemTransit(
@@ -29,36 +29,28 @@ fun GuideItemTransit(
     colorDotInt :Int= R.color.white,
     paddingLeft:Int
 ){
-    Row(modifier = Modifier.padding(start = paddingLeft.dp)) {
+    Row(modifier = Modifier.padding(start = paddingLeft.dp, bottom = 8.dp)) {
         Box(
             modifier = Modifier.width(100.dp),
         ) {
-
+            AnotherLine()
             TransitLine(colorTransitLineInt)
 
-            LineWithDot(
-                modifier = Modifier
-                    .width(44.dp)
-                    .padding(start = 16.dp),
-                lineColorInt = colorLineInt,
-                heightInt = 24
-            )
-            Image(
-                modifier = Modifier
-                    .width(60.dp)
-                    .padding(start = 2.dp, end = 2.dp, top = 10.dp),
-                painter = painterResource(R.drawable.baseline_circle_24),
-                contentDescription = "img_circle",
-                colorFilter = ColorFilter.tint(colorResource(id = colorLineInt))
+            VerticalLine(
+                modifier = Modifier.padding(start = 29.dp),
+                height = 50f,
+                color = colorResource(id = colorLineInt)
             )
 
-            Image(
-                modifier = Modifier
-                    .width(44.dp)
-                    .padding(start = 22.dp, end = 6.dp, top = 14.dp),
-                painter = painterResource(R.drawable.baseline_circle_24),
-                contentDescription = "img_circle",
-                colorFilter = ColorFilter.tint(colorResource(id = colorDotInt))
+            DotCircle(
+                modifier = Modifier.padding(start = 14.dp, top = 4.dp),
+                size = 30,
+                color = colorResource(id = colorLineInt)
+            )
+
+            DotCircle(
+                modifier = Modifier.padding(start = 20.dp, top = 10.dp),
+                color = colorResource(id = colorDotInt)
             )
 
         }
@@ -102,15 +94,7 @@ fun GuideItemTransit(
 
 @Composable
 private fun TransitLine(colorTransitLineInt: Int){
-    LineWithDot(
-        modifier = Modifier
-            .width(44.dp)
-            .padding(start = 16.dp, top = 24.dp),
-        lineColorInt = androidx.appcompat.R.color.material_grey_300,
-        heightInt = 36
-    )
-
-    LineWithDot(
+    Line(
         modifier = Modifier
             .width(80.dp)
             .padding(start = 20.dp, top = 22.dp)
@@ -121,20 +105,35 @@ private fun TransitLine(colorTransitLineInt: Int){
         heightInt = 18
     )
 
-    LineWithDot(
+    VerticalLine(
         modifier = Modifier
-            .width(84.dp)
-            .padding(start = 56.dp, top = 44.dp),
-        lineColorInt = colorTransitLineInt,
-        heightInt = 62
+            .fillMaxWidth()
+            .padding(start = 70.dp, top = 44.dp),
+        height= 140f,
+        color = colorResource(id = colorTransitLineInt)
     )
 
-    Image(
-        modifier = Modifier
-            .width(100.dp)
-            .padding(start = 40.dp, top = 32.dp),
-        painter = painterResource(R.drawable.baseline_circle_24),
-        contentDescription = "img_corner_circle",
-        colorFilter = ColorFilter.tint(colorResource(id = colorTransitLineInt))
+    DotCircle(
+        modifier = Modifier.padding(start = 61.dp, top = 33.dp),
+        size = 20,
+        color = colorResource(id = colorTransitLineInt)
     )
+}
+
+@Composable
+private fun AnotherLine(){
+    Box {
+        VerticalLine(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(start = 29.dp, top = 24.dp),
+            height = 300f,
+            color = colorResource(id = androidx.appcompat.R.color.material_grey_300)
+        )
+
+        DotCircle(
+            modifier = Modifier.padding(start = 20.dp, top = 64.dp),
+            color = colorResource(id = R.color.white)
+        )
+    }
 }

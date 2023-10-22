@@ -65,7 +65,7 @@ fun GuideWidget (
 }
 
 @Composable
-fun LineWithDot(
+fun Line(
     modifier :Modifier = Modifier,
     lineColorInt: Int,
     heightInt:Int = 40

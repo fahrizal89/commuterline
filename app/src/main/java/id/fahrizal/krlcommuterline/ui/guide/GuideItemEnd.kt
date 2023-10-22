@@ -28,7 +28,7 @@ fun GuideItemEnd(
         Box(
             modifier = Modifier.width(52.dp),
         ) {
-            LineWithDot(
+            Line(
                 modifier = Modifier.width(44.dp)
                     .padding(start = 16.dp),
                 lineColorInt = colorLineInt,
