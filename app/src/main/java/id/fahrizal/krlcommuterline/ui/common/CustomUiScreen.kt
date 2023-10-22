@@ -34,7 +34,7 @@ fun ErrorWidget(msg:String){
     Text(text = msg)
 }
 @Composable
-fun IconEditText(
+fun SimpleEditText(
     modifier: Modifier,
     text: String="",
     onTextChanged: (String) -> Unit,

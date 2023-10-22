@@ -24,7 +24,7 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import id.fahrizal.krlcommuterline.R
 import id.fahrizal.krlcommuterline.data.model.Station
-import id.fahrizal.krlcommuterline.ui.common.IconEditText
+import id.fahrizal.krlcommuterline.ui.common.SimpleEditText
 import id.fahrizal.krlcommuterline.ui.common.ErrorWidget
 import id.fahrizal.krlcommuterline.ui.common.LoadingWidget
 import kotlinx.coroutines.delay
@@ -42,7 +42,7 @@ fun FindStationScreen(
     val prevDebouncedText = remember { mutableStateOf("") }
 
     Column(modifier = modifier) {
-        IconEditText(
+        SimpleEditText(
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(8.dp, 2.dp, 8.dp, 2.dp)
