@@ -66,11 +66,13 @@ object StationCardCodeMapper {
         return false
     }
 
-    private fun List<String>.filterStationCode(newBusInfos:List<String>) {
+    private fun List<String>.filterStationCode(nextStationCodes:List<String>) {
+        if(nextStationCodes.isEmpty()) return
+
         val sameValueArrList = ArrayList<String>()
 
         for(prevBusInfo in this) {
-            for(newBusInfo in newBusInfos){
+            for(newBusInfo in nextStationCodes){
                 val prevBusCode = prevBusInfo.split("-")
                 val newBusCode = newBusInfo.split("-")
 
