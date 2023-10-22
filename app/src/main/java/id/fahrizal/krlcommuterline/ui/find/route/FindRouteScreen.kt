@@ -54,7 +54,7 @@ fun FindScreen (
                 viewModel.find(from.id, to.id)
             })
         {
-            Text(text = "Find")
+            Text(text = stringResource(id = R.string.find_route))
         }
 
         Divider(modifier = Modifier.padding(top = 8.dp))
