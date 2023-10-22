@@ -12,7 +12,6 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
-import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
@@ -24,7 +23,7 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import id.fahrizal.krlcommuterline.R
 import id.fahrizal.krlcommuterline.data.model.Station
-import id.fahrizal.krlcommuterline.ui.common.SimpleEditText
+import id.fahrizal.krlcommuterline.ui.common.DebounceTextField
 import id.fahrizal.krlcommuterline.ui.common.ErrorWidget
 import id.fahrizal.krlcommuterline.ui.common.LoadingWidget
 import kotlinx.coroutines.delay
@@ -39,10 +38,9 @@ fun FindStationScreen(
 ) {
     val focusRequester = remember { FocusRequester() }
     val keyboard = LocalSoftwareKeyboardController.current
-    val prevDebouncedText = remember { mutableStateOf("") }
 
     Column(modifier = modifier) {
-        SimpleEditText(
+        DebounceTextField(
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(8.dp, 2.dp, 8.dp, 2.dp)
@@ -51,10 +49,7 @@ fun FindStationScreen(
             hint = stringResource(id = R.string.find_station_hint),
             onTextChanged = { text->
                 Timber.d("search>>$text")
-                if(prevDebouncedText.value != text) {
-                    viewModel.search(text)
-                    prevDebouncedText.value = text
-                }
+                viewModel.search(text)
             },
         )
 
