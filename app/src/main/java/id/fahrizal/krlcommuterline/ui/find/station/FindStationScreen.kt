@@ -65,7 +65,13 @@ fun FindStationScreen(
         }
 
         when (val state = viewModel.uiState.collectAsState().value) {
-            is FindStationViewModel.FindStationUiState.Loaded -> StationList(state.stations, onSelected)
+            is FindStationViewModel.FindStationUiState.Loaded -> {
+                StationList(state.stations) { id ->
+                    onSelected(id)
+                    //clear current search result
+                    (state.stations as ArrayList).clear()
+                }
+            }
             is FindStationViewModel.FindStationUiState.Error -> ErrorWidget(msg = state.msg)
             is FindStationViewModel.FindStationUiState.Loading -> LoadingWidget()
         }
@@ -79,10 +85,8 @@ private fun StationList(stations: List<Station> = ArrayList(), onSelected: (Int)
             StationItem(
                 id = station.id,
                 name = station.name,
-                onClick = { id->
-                    onSelected(id)
-                    (stations as ArrayList).clear()
-                })
+                onClick = onSelected
+            )
         }
     }
     Divider()
