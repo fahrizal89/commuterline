@@ -15,7 +15,6 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardCapitalization
@@ -109,7 +108,7 @@ fun ClickableText(label:String, text:String="", onClick: () -> Unit){
             text = label,
             modifier = Modifier.padding(8.dp, 0.dp, 8.dp, 0.dp),
             fontSize = MaterialTheme.typography.caption.fontSize,
-            color = Color.Gray
+            color = colorResource(id = R.color.teal_700),
         )
         Column(
             modifier = Modifier
@@ -121,8 +120,7 @@ fun ClickableText(label:String, text:String="", onClick: () -> Unit){
                 text = text,
                 modifier = Modifier
                     .padding(8.dp, 8.dp, 8.dp, 8.dp)
-                    .fillMaxWidth(),
-                color = colorResource(id = R.color.teal_700),
+                    .fillMaxWidth()
             )
             Divider(modifier = Modifier.padding(8.dp, 0.dp, 8.dp, 4.dp))
         }
