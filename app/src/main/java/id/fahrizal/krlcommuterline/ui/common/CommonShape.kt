@@ -17,7 +17,7 @@ import id.fahrizal.krlcommuterline.R
 
 
 @Composable
-fun DotCircle(modifier: Modifier, size:Int = 18, color: Color){
+fun DotCircle(modifier: Modifier, size:Int = 16, color: Color){
     Column(modifier = modifier) {
         Image(
             modifier = Modifier

@@ -32,7 +32,7 @@ fun GuideItemStraight(
                 color = colorResource(id = colorLineInt)
             )
             DotCircle(
-                modifier = Modifier.padding(start = 20.dp, top = 10.dp),
+                modifier = Modifier.padding(start = 21.dp, top = 12.dp),
                 color = colorResource(id = colorDotInt)
             )
 

@@ -108,13 +108,14 @@ private fun TransitLine(colorTransitLineInt: Int){
     VerticalLine(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(start = 70.dp, top = 44.dp),
+            .padding(start = 69.dp, top = 44.dp),
         height= 40.dp,
         color = colorResource(id = colorTransitLineInt)
     )
 
+    //corner
     DotCircle(
-        modifier = Modifier.padding(start = 61.dp, top = 33.dp),
+        modifier = Modifier.padding(start = 60.dp, top = 33.dp),
         size = 20,
         color = colorResource(id = colorTransitLineInt)
     )

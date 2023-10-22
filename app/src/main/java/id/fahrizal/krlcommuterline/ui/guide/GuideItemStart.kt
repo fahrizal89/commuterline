@@ -36,12 +36,12 @@ fun GuideItemStart(
                 color = colorResource(id = colorLineInt)
             )
             DotCircle(
-                modifier = Modifier.padding(start = 14.dp, top = 4.dp),
+                modifier = Modifier.padding(start = 14.dp, top = 5.dp),
                 size = 30,
                 color = colorResource(id = colorLineInt)
             )
             DotCircle(
-                modifier = Modifier.padding(start = 20.dp, top = 10.dp),
+                modifier = Modifier.padding(start = 21.dp, top = 12.dp),
                 color = colorResource(id = colorDotInt)
             )
 
