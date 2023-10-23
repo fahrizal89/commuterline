@@ -14,12 +14,7 @@ object StationCardCodeMapper {
             if(!currentStationCard.next.stationCodes.isSameDestinationCode(prevStationCard.next.stationCodes)){
                 currentGroup--
                 if(i < this.lastIndex) {
-                    currentStationCard.next.stationCodes
-                    val newStationCodes = ArrayList<String>().also {
-                        it.addAll(currentStationCard.next.stationCodes)
-                        it.filterStationCode(this[i + 1].next.stationCodes)
-                    }
-                    (currentStationCard.next.stationCodes as ArrayList).apply { clear() }.addAll(newStationCodes)
+                    currentStationCard.next.stationCodes.filterStationCode(this[i + 1].next.stationCodes)
                 }
             }
             else {
