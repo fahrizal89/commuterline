@@ -28,11 +28,11 @@ fun GuideItemStraight(
         ) {
             VerticalLine(
                 modifier = Modifier.padding(start = 29.dp),
-                height = 32.dp,
+                height = 42.dp,
                 color = colorResource(id = colorLineInt)
             )
             DotCircle(
-                modifier = Modifier.padding(start = 21.dp, top = 12.dp),
+                modifier = Modifier.padding(start = 21.dp, top = 12.dp, bottom = 10.dp),
                 color = colorResource(id = colorDotInt)
             )
 
