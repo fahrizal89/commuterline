@@ -2,8 +2,8 @@ package id.fahrizal.krlcommuterline.ui.guide
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.material.MaterialTheme
@@ -30,7 +30,7 @@ fun GuideItemTransit(
     colorDotInt :Int= R.color.white,
     paddingLeft:Int
 ){
-    Row(modifier = Modifier.padding(start = paddingLeft.dp)) {
+    Box (modifier = Modifier.padding(start = paddingLeft.dp)) {
         Box(
             modifier = Modifier.width(92.dp),
         ) {
@@ -39,45 +39,45 @@ fun GuideItemTransit(
 
             VerticalLine(
                 modifier = Modifier.padding(start = 29.dp),
-                height = 10.dp,
+                height = 20.dp,
                 color = colorResource(id = colorLineInt)
             )
 
             DotCircle(
-                modifier = Modifier.padding(start = 14.dp, top = 4.dp),
+                modifier = Modifier.padding(start = 14.dp, top = 14.dp),
                 size = 30,
                 color = colorResource(id = colorLineInt)
             )
 
             DotCircle(
-                modifier = Modifier.padding(start = 21.dp, top = 12.dp),
+                modifier = Modifier.padding(start = 21.dp, top = 22.dp),
                 color = colorResource(id = colorDotInt)
             )
 
         }
 
-        Column {
+        Column (modifier = Modifier.height(80.dp).padding(start = 52.dp, top = 10.dp)){
             Text(
                 text = name,
-                modifier = Modifier.padding(end=2.dp, bottom = 2.dp, top = 2.dp),
+                modifier = Modifier.padding(end=2.dp, bottom = 2.dp, top = 6.dp),
                 fontSize = MaterialTheme.typography.subtitle1.fontSize,
                 color = Color.DarkGray,
                 fontWeight = FontWeight.Bold
             )
 
-            Row {
+            Column {
                 Text(
                     text = stringResource(id = R.string.transit_to_title),
-                    modifier = Modifier.padding(end=2.dp, top = 2.dp),
+                    modifier = Modifier.padding(start = 40.dp, end=2.dp, top = 2.dp),
                     fontSize = MaterialTheme.typography.caption.fontSize,
                     color = colorResource(id = R.color.teal_700),
                 )
 
                 Text(
                     text = destinationName,
-                    modifier = Modifier.padding(end=2.dp, top = 2.dp),
+                    modifier = Modifier.padding(start = 41.dp, end=2.dp, top = 2.dp),
                     fontSize = MaterialTheme.typography.caption.fontSize,
-                    color = Color.DarkGray,
+                    color = colorResource(id = R.color.guide_destination),
                     fontWeight = FontWeight.Bold,
                     maxLines = 1,
                     overflow = TextOverflow.Ellipsis
@@ -93,24 +93,24 @@ private fun TransitLine(colorTransitLineInt: Int){
     XLine(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(start = 20.dp, top = 16.dp),
-        x = 50.dp,
-        height= 26.dp,
-        width = 14.dp,
+            .padding(start = 28.dp, top = 30.dp),
+        x = 44.dp,
+        height= 56.dp,
+        width = 16.dp,
         color = colorResource(id = colorTransitLineInt)
     )
 
     VerticalLine(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(start = 69.dp, top = 44.dp),
-        height= 40.dp,
+            .padding(start = 69.dp, top = 84.dp),
+        height= 20.dp,
         color = colorResource(id = colorTransitLineInt)
     )
 
     //corner
     DotCircle(
-        modifier = Modifier.padding(start = 59.dp, top = 33.dp),
+        modifier = Modifier.padding(start = 59.dp, top = 73.dp),
         size = 21,
         color = colorResource(id = colorTransitLineInt)
     )
@@ -121,7 +121,7 @@ private fun AnotherLine(){
     VerticalLine(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(start = 29.dp, top = 24.dp),
+            .padding(start = 29.dp, top = 34.dp),
         width = 12.dp,
         height = 100.dp,
         color = colorResource(id = androidx.appcompat.R.color.material_grey_300)

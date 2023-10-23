@@ -67,7 +67,7 @@ fun GuideItemStart(
                     text = destinationName,
                     modifier = Modifier.padding(end=2.dp, top = 2.dp),
                     fontSize = MaterialTheme.typography.caption.fontSize,
-                    color = Color.DarkGray,
+                    color = colorResource(id = R.color.guide_destination),
                     fontWeight = FontWeight.Bold
                 )
             }
