@@ -15,7 +15,7 @@ object StationCardMapper {
         for (i:Int in 0 until this.size){
             val station = this[i]
             val nextStationCardBranch = if(i < this.lastIndex) {
-                val stationCodes = this.getStationCodesFromStationResult(i)
+                val stationCodes = ArrayList<String>().apply{ addAll(getStationCodesFromStationResult(i))}
                 StationCardBranch(
                     id =this[i+1].id ?: -1,
                     stationCodes = stationCodes
