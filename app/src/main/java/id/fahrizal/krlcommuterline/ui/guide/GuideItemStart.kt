@@ -34,7 +34,7 @@ fun GuideItemStart(
         ) {
             VerticalLine(
                 modifier = Modifier.padding(start = 29.dp, top = 28.dp),
-                height = 28.dp,
+                height = 32.dp,
                 color = colorResource(id = colorLineInt)
             )
             DotCircle(
