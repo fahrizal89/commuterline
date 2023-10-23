@@ -23,7 +23,7 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import id.fahrizal.krlcommuterline.R
 import id.fahrizal.krlcommuterline.data.model.Station
-import id.fahrizal.krlcommuterline.ui.common.DebouncedEditText
+import id.fahrizal.krlcommuterline.ui.common.DebounceTextField
 import id.fahrizal.krlcommuterline.ui.common.ErrorWidget
 import id.fahrizal.krlcommuterline.ui.common.LoadingWidget
 import kotlinx.coroutines.delay
@@ -40,15 +40,14 @@ fun FindStationScreen(
     val keyboard = LocalSoftwareKeyboardController.current
 
     Column(modifier = modifier) {
-        DebouncedEditText(
+        DebounceTextField(
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(8.dp, 2.dp, 8.dp, 2.dp)
                 .focusRequester(focusRequester),
             label = stringResource(id = R.string.find),
             hint = stringResource(id = R.string.find_station_hint),
-            delayInMillis = 100,
-            onTextChanged = {text->
+            onTextChanged = { text->
                 Timber.d("search>>$text")
                 viewModel.search(text)
             },
@@ -61,7 +60,13 @@ fun FindStationScreen(
         }
 
         when (val state = viewModel.uiState.collectAsState().value) {
-            is FindStationViewModel.FindStationUiState.Loaded -> StationList(state.stations, onSelected)
+            is FindStationViewModel.FindStationUiState.Loaded -> {
+                StationList(state.stations) { id ->
+                    onSelected(id)
+                    //clear current search result
+                    (state.stations as ArrayList).clear()
+                }
+            }
             is FindStationViewModel.FindStationUiState.Error -> ErrorWidget(msg = state.msg)
             is FindStationViewModel.FindStationUiState.Loading -> LoadingWidget()
         }
@@ -75,10 +80,8 @@ private fun StationList(stations: List<Station> = ArrayList(), onSelected: (Int)
             StationItem(
                 id = station.id,
                 name = station.name,
-                onClick = { id->
-                    onSelected(id)
-                    (stations as ArrayList).clear()
-                })
+                onClick = onSelected
+            )
         }
     }
     Divider()
