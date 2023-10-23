@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -13,6 +14,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import id.fahrizal.krlcommuterline.R
 import id.fahrizal.krlcommuterline.ui.common.DotCircle
@@ -32,7 +34,7 @@ fun GuideItemStart(
         ) {
             VerticalLine(
                 modifier = Modifier.padding(start = 29.dp, top = 28.dp),
-                height = 26.dp,
+                height = 28.dp,
                 color = colorResource(id = colorLineInt)
             )
             DotCircle(
@@ -55,21 +57,28 @@ fun GuideItemStart(
                 fontWeight = FontWeight.Bold
             )
 
-            Row (modifier = Modifier.padding(start = 2.dp)) {
-                Text(
-                    text = stringResource(id = R.string.destination_title),
-                    modifier = Modifier.padding(end=2.dp, top = 2.dp),
-                    fontSize = MaterialTheme.typography.caption.fontSize,
-                    color = colorResource(id = R.color.teal_700),
-                )
+            Surface(
+                color = colorResource(id = R.color.guide_box_destination),
+                modifier = Modifier.padding(start = 2.dp)
+            ) {
+                Row {
+                    Text(
+                        text = stringResource(id = R.string.destination_title),
+                        fontSize = MaterialTheme.typography.overline.fontSize,
+                        color = Color.DarkGray,
+                        modifier = Modifier.padding(start = 4.dp, top = 4.dp, end = 2.dp, bottom = 4.dp)
+                    )
 
-                Text(
-                    text = destinationName,
-                    modifier = Modifier.padding(end=2.dp, top = 2.dp),
-                    fontSize = MaterialTheme.typography.caption.fontSize,
-                    color = colorResource(id = R.color.guide_destination),
-                    fontWeight = FontWeight.Bold
-                )
+                    Text(
+                        text = destinationName,
+                        modifier = Modifier.padding(top = 4.dp, end = 4.dp, bottom = 4.dp),
+                        fontSize = MaterialTheme.typography.overline.fontSize,
+                        color = Color.DarkGray,
+                        fontWeight = FontWeight.Bold,
+                        maxLines = 1,
+                        overflow = TextOverflow.Ellipsis
+                    )
+                }
             }
         }
 

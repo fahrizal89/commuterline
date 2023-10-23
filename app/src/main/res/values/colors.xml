@@ -9,6 +9,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="material_grey_400">#ffA0A0A0</color>
     <color name="guide_destination">#ff394AAf</color>
+    <color name="guide_box_destination">#ffEEEEEE</color>
 
     <color name="line_green_1">#FF85c132</color>
     <color name="line_blue_1">#FF36b0e8</color>

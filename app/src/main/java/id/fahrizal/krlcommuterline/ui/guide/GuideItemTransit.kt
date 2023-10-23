@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -56,7 +57,9 @@ fun GuideItemTransit(
 
         }
 
-        Column (modifier = Modifier.height(80.dp).padding(start = 52.dp, top = 10.dp)){
+        Column (modifier = Modifier
+            .height(80.dp)
+            .padding(start = 52.dp, top = 10.dp)){
             Text(
                 text = name,
                 modifier = Modifier.padding(end=2.dp, bottom = 2.dp, top = 6.dp),
@@ -65,24 +68,31 @@ fun GuideItemTransit(
                 fontWeight = FontWeight.Bold
             )
 
-            Column {
-                Text(
-                    text = stringResource(id = R.string.transit_to_title),
-                    modifier = Modifier.padding(start = 40.dp, end=2.dp, top = 2.dp),
-                    fontSize = MaterialTheme.typography.caption.fontSize,
-                    color = colorResource(id = R.color.teal_700),
-                )
 
-                Text(
-                    text = destinationName,
-                    modifier = Modifier.padding(start = 41.dp, end=2.dp, top = 2.dp),
-                    fontSize = MaterialTheme.typography.caption.fontSize,
-                    color = colorResource(id = R.color.guide_destination),
-                    fontWeight = FontWeight.Bold,
-                    maxLines = 1,
-                    overflow = TextOverflow.Ellipsis
-                )
+            Surface(
+                color = colorResource(id = R.color.guide_box_destination),
+                modifier = Modifier.padding(start = 40.dp, end = 2.dp, top = 2.dp)
+            ) {
+                Column {
+                    Text(
+                        text = stringResource(id = R.string.transit_to_title),
+                        fontSize = MaterialTheme.typography.overline.fontSize,
+                        color = Color.DarkGray,
+                        modifier = Modifier.padding(start = 4.dp, top = 4.dp, end = 4.dp)
+                    )
+
+                    Text(
+                        text = destinationName,
+                        modifier = Modifier.padding(start = 5.dp, end = 4.dp, bottom = 4.dp),
+                        fontSize = MaterialTheme.typography.overline.fontSize,
+                        color = Color.DarkGray,
+                        fontWeight = FontWeight.Bold,
+                        maxLines = 1,
+                        overflow = TextOverflow.Ellipsis
+                    )
+                }
             }
+
         }
 
     }
