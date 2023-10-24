@@ -1,7 +1,10 @@
 package id.fahrizal.krlcommuterline.ui.common
 
+import androidx.annotation.DrawableRes
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.text.KeyboardOptions
@@ -19,13 +22,12 @@ import androidx.compose.runtime.rememberUpdatedState
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.res.colorResource
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardCapitalization
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
-import id.fahrizal.krlcommuterline.R
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -108,31 +110,40 @@ private fun <T> T.useDebounce(
 }
 
 @Composable
-fun ClickableText(label:String, text:String ="", hint:String ="", onClick: () -> Unit) {
+fun ClickableText(
+    modifier :Modifier=Modifier,
+    text:String ="",
+    hint:String ="",
+    @DrawableRes iconResource : Int? = null,
+    onClick: () -> Unit
+) {
     val fontColor = if(text != "") Color.DarkGray else Color.Gray
 
-    Column {
-        Text(
-            text = label,
-            modifier = Modifier.padding(8.dp, 0.dp, 8.dp, 0.dp),
-            fontSize = MaterialTheme.typography.caption.fontSize,
-            color = colorResource(id = R.color.teal_700),
-        )
-        Column(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(8.dp, 0.dp, 8.dp, 8.dp)
-                .clickable { onClick() }
-        ) {
-            Text(
-                text = if(text != "") text else hint,
-                color= fontColor,
-                fontWeight = if(text != "") FontWeight.Bold else null,
+    Column (modifier = modifier){
+        Row {
+            if(iconResource != null) {
+                Image(
+                    modifier = Modifier.padding(start = 4.dp, top = 8.dp, end = 4.dp),
+                    painter = painterResource(iconResource),
+                    contentDescription = "clickable-text-icon"
+                )
+            }
+            Column(
                 modifier = Modifier
-                    .padding(8.dp, 8.dp, 8.dp, 8.dp)
                     .fillMaxWidth()
-            )
-            Divider(modifier = Modifier.padding(8.dp, 0.dp, 8.dp, 4.dp))
+                    .padding(end = 12.dp)
+                    .clickable { onClick() }
+            ) {
+                Text(
+                    text = if (text != "") text else hint,
+                    color = fontColor,
+                    fontWeight = if (text != "") FontWeight.Bold else null,
+                    modifier = Modifier
+                        .padding(start = 2.dp, top = 12.dp, bottom = 12.dp, end = 12.dp)
+                        .fillMaxWidth()
+                )
+                Divider()
+            }
         }
     }
 }

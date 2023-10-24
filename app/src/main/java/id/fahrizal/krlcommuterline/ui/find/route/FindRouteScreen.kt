@@ -13,6 +13,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
@@ -34,17 +35,25 @@ fun FindScreen (
     var to by rememberSaveable{ mutableStateOf(Station()) }
 
     Column(modifier = modifier) {
-        ClickableText(
-            label = stringResource(id = R.string.from),
-            text = from.name,
-            hint = stringResource(id = R.string.select_station_hint),
-            onClick = onTxtFromClicked
+        Text(
+            text = stringResource(id = R.string.destination_title),
+            color = colorResource(id = R.color.teal_700),
+            modifier = Modifier.padding(start = 8.dp)
         )
 
         ClickableText(
-            label = stringResource(id = R.string.to),
+            text = from.name,
+            hint = stringResource(id = R.string.select_station_from_hint),
+            iconResource = R.drawable.baseline_train_24,
+            onClick = onTxtFromClicked
+        )
+
+        Text(text = "|", modifier = Modifier.padding(start = 12.dp))
+
+        ClickableText(
             text = to.name,
-            hint = stringResource(id = R.string.select_station_hint),
+            hint = stringResource(id = R.string.select_station_to_hint),
+            iconResource = R.drawable.baseline_train_24,
             onClick = onTxtToClicked
         )
 
