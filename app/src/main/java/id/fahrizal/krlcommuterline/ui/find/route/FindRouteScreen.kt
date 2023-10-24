@@ -37,12 +37,14 @@ fun FindScreen (
         ClickableText(
             label = stringResource(id = R.string.from),
             text = from.name,
+            hint = stringResource(id = R.string.select_station_hint),
             onClick = onTxtFromClicked
         )
 
         ClickableText(
             label = stringResource(id = R.string.to),
             text = to.name,
+            hint = stringResource(id = R.string.select_station_hint),
             onClick = onTxtToClicked
         )
 

@@ -18,7 +18,9 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.rememberUpdatedState
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardCapitalization
 import androidx.compose.ui.text.input.KeyboardType
@@ -106,7 +108,9 @@ private fun <T> T.useDebounce(
 }
 
 @Composable
-fun ClickableText(label:String, text:String="", onClick: () -> Unit){
+fun ClickableText(label:String, text:String ="", hint:String ="", onClick: () -> Unit) {
+    val fontColor = if(text != "") Color.DarkGray else Color.Gray
+
     Column {
         Text(
             text = label,
@@ -121,7 +125,9 @@ fun ClickableText(label:String, text:String="", onClick: () -> Unit){
                 .clickable { onClick() }
         ) {
             Text(
-                text = text,
+                text = if(text != "") text else hint,
+                color= fontColor,
+                fontWeight = if(text != "") FontWeight.Bold else null,
                 modifier = Modifier
                     .padding(8.dp, 8.dp, 8.dp, 8.dp)
                     .fillMaxWidth()
