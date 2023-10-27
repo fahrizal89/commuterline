@@ -5,6 +5,6 @@ import retrofit2.http.GET
 
 interface RouteApi {
 
-    @GET("all-stations.json")
+    @GET("commuterline/main/api/all-stations.json")
     suspend fun getRoute(): Route
 }
