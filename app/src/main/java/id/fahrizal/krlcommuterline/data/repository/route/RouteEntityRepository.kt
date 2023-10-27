@@ -15,8 +15,7 @@ class RouteEntityRepository @Inject constructor(
         val routeFromDb = routeFactory.create(Source.LOCAL).getRoute()
 
         if(routeFromDb.nodes.isEmpty()){
-            //get file from mock data, you can replace with data network
-            val routeFromFile = routeFactory.create(Source.MOCK).getRoute()
+            val routeFromFile = routeFactory.create(Source.REMOTE).getRoute()
             routeFactory.create(Source.LOCAL).setRoute(routeFromFile)
 
             return routeFromFile

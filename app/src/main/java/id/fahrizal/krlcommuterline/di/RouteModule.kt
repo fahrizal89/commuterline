@@ -7,9 +7,10 @@ import dagger.hilt.components.SingletonComponent
 import id.fahrizal.krlcommuterline.data.algorithm.DijkstraAlgorithm
 import id.fahrizal.krlcommuterline.data.repository.route.RouteEntityRepository
 import id.fahrizal.krlcommuterline.data.repository.route.RouteRepository
-import id.fahrizal.krlcommuterline.data.repository.route.source.LocalRouteEntityData
-import id.fahrizal.krlcommuterline.data.repository.route.source.MockRouteEntityData
+import id.fahrizal.krlcommuterline.data.repository.route.source.local.LocalRouteEntityData
 import id.fahrizal.krlcommuterline.data.repository.route.source.RouteEntityData
+import id.fahrizal.krlcommuterline.data.repository.route.source.remote.RouteApi
+import retrofit2.Retrofit
 import javax.inject.Singleton
 
 @InstallIn(SingletonComponent::class)
@@ -30,13 +31,13 @@ class RouteModule {
 
     @Provides
     @Singleton
-    fun provideMockRouteEntityData(mockRouteEntityData: MockRouteEntityData): RouteEntityData {
-        return mockRouteEntityData
+    fun provideDijkstraAlgorithm(): DijkstraAlgorithm {
+        return DijkstraAlgorithm()
     }
 
     @Provides
     @Singleton
-    fun provideDijkstraAlgorithm(): DijkstraAlgorithm {
-        return DijkstraAlgorithm()
+    fun provideRouteApi(retrofit: Retrofit): RouteApi {
+        return retrofit.create(RouteApi::class.java)
     }
 }

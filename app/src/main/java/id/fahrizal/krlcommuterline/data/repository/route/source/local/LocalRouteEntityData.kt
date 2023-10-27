@@ -1,7 +1,8 @@
-package id.fahrizal.krlcommuterline.data.repository.route.source
+package id.fahrizal.krlcommuterline.data.repository.route.source.local
 
 import id.fahrizal.krlcommuterline.data.algorithm.DijkstraAlgorithm
 import id.fahrizal.krlcommuterline.data.model.Route
+import id.fahrizal.krlcommuterline.data.repository.route.source.RouteEntityData
 import javax.inject.Inject
 
 
