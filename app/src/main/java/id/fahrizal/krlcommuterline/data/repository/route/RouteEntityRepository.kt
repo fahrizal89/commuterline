@@ -15,10 +15,10 @@ class RouteEntityRepository @Inject constructor(
         val routeFromDb = routeFactory.create(Source.LOCAL).getRoute()
 
         if(routeFromDb.nodes.isEmpty()){
-            val routeFromFile = routeFactory.create(Source.REMOTE).getRoute()
-            routeFactory.create(Source.LOCAL).setRoute(routeFromFile)
+            val routeFromRemote = routeFactory.create(Source.REMOTE).getRoute()
+            routeFactory.create(Source.LOCAL).setRoute(routeFromRemote)
 
-            return routeFromFile
+            return routeFromRemote
         }
 
         return routeFromDb

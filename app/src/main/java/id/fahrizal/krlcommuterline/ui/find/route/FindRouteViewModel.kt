@@ -54,19 +54,19 @@ class FindRouteViewModel @Inject constructor(
         }
     }
 
-    fun setStationFrom(id: Int, name:String){
-        _uiState.value = FindUiState.SelectedStationFrom(id, name)
+    fun setStationDeparture(id: Int, name:String){
+        _uiState.value = FindUiState.SelectedStationDeparture(id, name)
     }
 
-    fun setStationTo(id: Int, name:String){
-        _uiState.value = FindUiState.SelectedStationTo(id, name)
+    fun setStationDestination(id: Int, name:String){
+        _uiState.value = FindUiState.SelectedStationDestination(id, name)
     }
 
     sealed class FindUiState {
         object Loading : FindUiState()
         class Loaded(val stationCards : List<StationCard> = ArrayList()) : FindUiState()
         class Error(val msg:String) : FindUiState()
-        class SelectedStationFrom(val id:Int, val name:String) : FindUiState()
-        class SelectedStationTo(val id:Int, val name:String) : FindUiState()
+        class SelectedStationDeparture(val id:Int, val name:String) : FindUiState()
+        class SelectedStationDestination(val id:Int, val name:String) : FindUiState()
     }
 }

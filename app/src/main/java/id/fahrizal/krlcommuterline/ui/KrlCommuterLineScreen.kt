@@ -58,33 +58,33 @@ fun KrlCommuterLineApp(
             composable(route = KrlCommuterLineScreen.FindRouteLine.name) {
                 FindScreen(
                     viewModel = findRouteViewModel,
-                    onTxtFromClicked = {
-                        navController.navigate(KrlCommuterLineScreen.FindStationFrom.name)
+                    onTxtDepartureClicked = {
+                        navController.navigate(KrlCommuterLineScreen.FindStationDeparture.name)
                     },
-                    onTxtToClicked = {
-                        navController.navigate(KrlCommuterLineScreen.FindStationTo.name)
+                    onTxtDestinationClicked = {
+                        navController.navigate(KrlCommuterLineScreen.FindStationDestination.name)
                     },
                     modifier = Modifier.fillMaxWidth().padding(innerPadding)
                 )
             }
 
-            composable(route = KrlCommuterLineScreen.FindStationFrom.name) {
+            composable(route = KrlCommuterLineScreen.FindStationDeparture.name) {
                 FindStationScreen(
                     viewModel = findStationViewModel,
                     modifier = Modifier.fillMaxWidth().padding(innerPadding),
                     onSelected = { id,name ->
-                        findRouteViewModel.setStationFrom(id,name)
+                        findRouteViewModel.setStationDeparture(id,name)
                         navController.navigateUp()
                     }
                 )
             }
 
-            composable(route = KrlCommuterLineScreen.FindStationTo.name) {
+            composable(route = KrlCommuterLineScreen.FindStationDestination.name) {
                 FindStationScreen(
                     viewModel = findStationViewModel,
                     modifier = Modifier.fillMaxWidth().padding(top = 62.dp),
                     onSelected = { id,name ->
-                        findRouteViewModel.setStationTo(id, name)
+                        findRouteViewModel.setStationDestination(id, name)
                         navController.navigateUp()
                     }
                 )
@@ -119,6 +119,6 @@ fun AppBar(
 
 enum class KrlCommuterLineScreen(@StringRes val title: Int) {
     FindRouteLine(title = R.string.app_name),
-    FindStationFrom(title = R.string.find_station),
-    FindStationTo(title = R.string.find_station),
+    FindStationDeparture(title = R.string.find_station),
+    FindStationDestination(title = R.string.find_station),
 }
