@@ -72,8 +72,8 @@ fun KrlCommuterLineApp(
                 FindStationScreen(
                     viewModel = findStationViewModel,
                     modifier = Modifier.fillMaxWidth().padding(innerPadding),
-                    onSelected = { id ->
-                        findRouteViewModel.setStationFrom(id)
+                    onSelected = { id,name ->
+                        findRouteViewModel.setStationFrom(id,name)
                         navController.navigateUp()
                     }
                 )
@@ -83,8 +83,8 @@ fun KrlCommuterLineApp(
                 FindStationScreen(
                     viewModel = findStationViewModel,
                     modifier = Modifier.fillMaxWidth().padding(top = 62.dp),
-                    onSelected = { id ->
-                        findRouteViewModel.setStationTo(id)
+                    onSelected = { id,name ->
+                        findRouteViewModel.setStationTo(id, name)
                         navController.navigateUp()
                     }
                 )

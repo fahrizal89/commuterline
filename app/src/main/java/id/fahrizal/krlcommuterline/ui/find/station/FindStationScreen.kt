@@ -34,7 +34,7 @@ import timber.log.Timber
 fun FindStationScreen(
     modifier: Modifier = Modifier,
     viewModel: FindStationViewModel = viewModel(),
-    onSelected: (Int) -> Unit
+    onSelected: (Int,String) -> Unit
 ) {
     val focusRequester = remember { FocusRequester() }
     val keyboard = LocalSoftwareKeyboardController.current
@@ -61,8 +61,8 @@ fun FindStationScreen(
 
         when (val state = viewModel.uiState.collectAsState().value) {
             is FindStationViewModel.FindStationUiState.Loaded -> {
-                StationList(state.stations) { id ->
-                    onSelected(id)
+                StationList(state.stations) { id,name ->
+                    onSelected(id,name)
                     //clear current search result
                     (state.stations as ArrayList).clear()
                 }
@@ -74,7 +74,7 @@ fun FindStationScreen(
 }
 
 @Composable
-private fun StationList(stations: List<Station> = ArrayList(), onSelected: (Int) -> Unit){
+private fun StationList(stations: List<Station> = ArrayList(), onSelected: (Int,String) -> Unit){
     LazyColumn(modifier = Modifier.padding(top = 16.dp, start = 8.dp, end = 8.dp)) {
         items(items = stations, key = { it.id }) { station ->
             StationItem(
@@ -88,8 +88,8 @@ private fun StationList(stations: List<Station> = ArrayList(), onSelected: (Int)
 }
 
 @Composable
-private fun StationItem(id:Int, name:String, onClick: (Int) -> Unit){
-    Column (modifier = Modifier.clickable { onClick(id) }){
+private fun StationItem(id:Int, name:String, onClick: (Int,String) -> Unit){
+    Column (modifier = Modifier.clickable { onClick(id,name) }){
         Divider()
         Row(modifier = Modifier.padding(top = 8.dp, bottom = 8.dp)) {
             Text(text = name)

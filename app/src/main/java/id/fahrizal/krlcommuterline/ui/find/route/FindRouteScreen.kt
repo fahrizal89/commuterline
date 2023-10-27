@@ -18,7 +18,6 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import id.fahrizal.krlcommuterline.R
-import id.fahrizal.krlcommuterline.data.model.Station
 import id.fahrizal.krlcommuterline.ui.common.ClickableText
 import id.fahrizal.krlcommuterline.ui.common.ErrorWidget
 import id.fahrizal.krlcommuterline.ui.common.LoadingWidget
@@ -31,8 +30,10 @@ fun FindScreen (
     onTxtFromClicked: ()->Unit = {},
     onTxtToClicked: ()->Unit = {}
 ){
-    var from by rememberSaveable { mutableStateOf(Station()) }
-    var to by rememberSaveable{ mutableStateOf(Station()) }
+    var fromId by rememberSaveable { mutableStateOf(-1) }
+    var fromName by rememberSaveable { mutableStateOf("") }
+    var toId by rememberSaveable{ mutableStateOf(-1) }
+    var toName by rememberSaveable{ mutableStateOf("") }
 
     Column(modifier = modifier) {
         Text(
@@ -42,7 +43,7 @@ fun FindScreen (
         )
 
         ClickableText(
-            text = from.name,
+            text = fromName,
             hint = stringResource(id = R.string.select_station_from_hint),
             iconResource = R.drawable.baseline_train_24,
             onClick = onTxtFromClicked
@@ -51,7 +52,7 @@ fun FindScreen (
         Text(text = "|", modifier = Modifier.padding(start = 12.dp))
 
         ClickableText(
-            text = to.name,
+            text = toName,
             hint = stringResource(id = R.string.select_station_to_hint),
             iconResource = R.drawable.baseline_train_24,
             onClick = onTxtToClicked
@@ -62,7 +63,7 @@ fun FindScreen (
                 .padding(top = 22.dp, start = 22.dp, end = 22.dp)
                 .fillMaxWidth(),
             onClick = {
-                viewModel.find(from.id, to.id)
+                viewModel.find(fromId, toId)
             })
         {
             Text(text = stringResource(id = R.string.find_route))
@@ -74,8 +75,14 @@ fun FindScreen (
             is FindRouteViewModel.FindUiState.Loaded -> GuideWidget(state.stationCards)
             is FindRouteViewModel.FindUiState.Loading -> LoadingWidget()
             is FindRouteViewModel.FindUiState.Error -> ErrorWidget(msg = state.msg)
-            is FindRouteViewModel.FindUiState.SelectedStationFrom -> from = state.station
-            is FindRouteViewModel.FindUiState.SelectedStationTo -> to = state.station
+            is FindRouteViewModel.FindUiState.SelectedStationFrom -> {
+                fromId = state.id
+                fromName = state.name
+            }
+            is FindRouteViewModel.FindUiState.SelectedStationTo -> {
+                toId = state.id
+                toName = state.name
+            }
         }
     }
 }
