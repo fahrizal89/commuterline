@@ -4,7 +4,6 @@ import id.fahrizal.krlcommuterline.data.model.Route
 import retrofit2.http.GET
 
 interface RouteApi {
-
-    @GET("all-stations.json")
+    @GET("commuterline/main/app/api/all-stations.json")
     suspend fun getRoute(): Route
 }
