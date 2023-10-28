@@ -13,4 +13,6 @@
 
     <string name="transit_to_title">Transit to destination</string>
     <string name="destination_title">Destination</string>
+
+    <string name="station_detail">Station Detail</string>
 </resources>

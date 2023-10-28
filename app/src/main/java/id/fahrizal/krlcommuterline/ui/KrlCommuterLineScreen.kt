@@ -25,6 +25,7 @@ import androidx.navigation.compose.rememberNavController
 import id.fahrizal.krlcommuterline.R
 import id.fahrizal.krlcommuterline.ui.route.find.FindScreen
 import id.fahrizal.krlcommuterline.ui.route.find.FindRouteViewModel
+import id.fahrizal.krlcommuterline.ui.station.detail.StationDetailScreen
 import id.fahrizal.krlcommuterline.ui.station.find.FindStationScreen
 import id.fahrizal.krlcommuterline.ui.station.find.FindStationViewModel
 
@@ -64,6 +65,9 @@ fun KrlCommuterLineApp(
                     onTxtDestinationClicked = {
                         navController.navigate(KrlCommuterLineScreen.FindStationDestination.name)
                     },
+                    onStationClicked = {
+                        navController.navigate(KrlCommuterLineScreen.StationDetail.name)
+                    },
                     modifier = Modifier.fillMaxWidth().padding(innerPadding)
                 )
             }
@@ -87,6 +91,12 @@ fun KrlCommuterLineApp(
                         findRouteViewModel.setStationDestination(id, name)
                         navController.navigateUp()
                     }
+                )
+            }
+
+            composable(route = KrlCommuterLineScreen.StationDetail.name) {
+                StationDetailScreen(
+                    modifier = Modifier.fillMaxWidth().padding(top = 62.dp)
                 )
             }
         }
@@ -121,4 +131,5 @@ enum class KrlCommuterLineScreen(@StringRes val title: Int) {
     FindRouteLine(title = R.string.app_name),
     FindStationDeparture(title = R.string.find_station),
     FindStationDestination(title = R.string.find_station),
+    StationDetail(title = R.string.station_detail),
 }
