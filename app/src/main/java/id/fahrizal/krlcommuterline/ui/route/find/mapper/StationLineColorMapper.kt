@@ -1,4 +1,4 @@
-package id.fahrizal.krlcommuterline.ui.find.route.mapper
+package id.fahrizal.krlcommuterline.ui.route.find.mapper
 
 import id.fahrizal.krlcommuterline.R
 

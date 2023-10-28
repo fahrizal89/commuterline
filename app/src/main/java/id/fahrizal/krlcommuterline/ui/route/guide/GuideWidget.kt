@@ -1,4 +1,4 @@
-package id.fahrizal.krlcommuterline.ui.guide
+package id.fahrizal.krlcommuterline.ui.route.guide
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth

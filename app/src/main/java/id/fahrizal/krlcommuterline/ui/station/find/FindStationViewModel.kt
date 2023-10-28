@@ -1,4 +1,4 @@
-package id.fahrizal.krlcommuterline.ui.find.station
+package id.fahrizal.krlcommuterline.ui.station.find
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

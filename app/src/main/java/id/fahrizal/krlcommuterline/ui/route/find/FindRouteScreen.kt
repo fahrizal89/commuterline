@@ -1,4 +1,4 @@
-package id.fahrizal.krlcommuterline.ui.find.route
+package id.fahrizal.krlcommuterline.ui.route.find
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -21,7 +21,7 @@ import id.fahrizal.krlcommuterline.R
 import id.fahrizal.krlcommuterline.ui.common.ClickableText
 import id.fahrizal.krlcommuterline.ui.common.ErrorWidget
 import id.fahrizal.krlcommuterline.ui.common.LoadingWidget
-import id.fahrizal.krlcommuterline.ui.guide.GuideWidget
+import id.fahrizal.krlcommuterline.ui.route.guide.GuideWidget
 
 @Composable
 fun FindScreen (

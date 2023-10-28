@@ -1,4 +1,4 @@
-package id.fahrizal.krlcommuterline.ui.guide
+package id.fahrizal.krlcommuterline.ui.route.guide
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
@@ -10,14 +10,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import id.fahrizal.krlcommuterline.R
 import id.fahrizal.krlcommuterline.ui.common.DotCircle
 import id.fahrizal.krlcommuterline.ui.common.VerticalLine
 
 @Composable
-fun GuideItemEnd(
+fun GuideItemStraight(
     name:String,
     colorLineInt :Int,
     colorDotInt :Int= R.color.white,
@@ -29,16 +28,11 @@ fun GuideItemEnd(
         ) {
             VerticalLine(
                 modifier = Modifier.padding(start = 29.dp),
-                height = 22.dp,
+                height = 42.dp,
                 color = colorResource(id = colorLineInt)
             )
             DotCircle(
-                modifier = Modifier.padding(start = 14.dp, top = 6.dp),
-                size = 30,
-                color = colorResource(id = colorLineInt)
-            )
-            DotCircle(
-                modifier = Modifier.padding(start = 21.dp, top = 13.dp),
+                modifier = Modifier.padding(start = 21.dp, top = 12.dp, bottom = 10.dp),
                 color = colorResource(id = colorDotInt)
             )
 
@@ -46,10 +40,9 @@ fun GuideItemEnd(
 
         Text(
             text = name,
-            modifier = Modifier.padding(end=2.dp, bottom = 2.dp, top = 10.dp),
-            fontSize = MaterialTheme.typography.subtitle1.fontSize,
-            color = Color.DarkGray,
-            fontWeight = FontWeight.Bold
+            modifier = Modifier.padding(end=2.dp, bottom = 2.dp, top = 12.dp),
+            fontSize = MaterialTheme.typography.caption.fontSize,
+            color = Color.DarkGray
         )
 
     }

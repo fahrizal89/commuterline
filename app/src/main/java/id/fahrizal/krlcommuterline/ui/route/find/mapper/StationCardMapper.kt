@@ -1,10 +1,10 @@
-package id.fahrizal.krlcommuterline.ui.find.route.mapper
+package id.fahrizal.krlcommuterline.ui.route.find.mapper
 
 import id.fahrizal.krlcommuterline.data.model.StationResult
 import id.fahrizal.krlcommuterline.domain.model.StationCard
 import id.fahrizal.krlcommuterline.domain.model.StationCardBranch
 import id.fahrizal.krlcommuterline.domain.model.StepCardState
-import id.fahrizal.krlcommuterline.ui.find.route.mapper.StationCardCodeMapper.isSameDestinationCode
+import id.fahrizal.krlcommuterline.ui.route.find.mapper.StationCardCodeMapper.isSameDestinationCode
 
 
 object StationCardMapper {
