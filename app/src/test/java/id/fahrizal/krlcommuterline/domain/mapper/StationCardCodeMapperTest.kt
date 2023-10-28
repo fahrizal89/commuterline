@@ -1,6 +1,6 @@
 package id.fahrizal.krlcommuterline.domain.mapper
 
-import id.fahrizal.krlcommuterline.ui.find.route.mapper.StationCardCodeMapper.filterDestinationAndSetColor
+import id.fahrizal.krlcommuterline.ui.route.find.mapper.StationCardCodeMapper.filterDestinationAndSetColor
 import id.fahrizal.krlcommuterline.domain.model.StationCard
 import id.fahrizal.krlcommuterline.domain.model.StationCardBranch
 import org.junit.Assert

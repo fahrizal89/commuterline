@@ -10,7 +10,7 @@ import id.fahrizal.krlcommuterline.domain.model.StationCard
 import id.fahrizal.krlcommuterline.domain.model.StationCardBranch
 import id.fahrizal.krlcommuterline.domain.model.StepCardState
 import id.fahrizal.krlcommuterline.ui.KrlCommuterLineApp
-import id.fahrizal.krlcommuterline.ui.guide.GuideWidget
+import id.fahrizal.krlcommuterline.ui.route.guide.GuideWidget
 import id.fahrizal.krlcommuterline.ui.theme.KrlcommuterlineTheme
 
 @AndroidEntryPoint

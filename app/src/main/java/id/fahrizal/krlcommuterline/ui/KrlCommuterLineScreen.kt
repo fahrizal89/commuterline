@@ -23,10 +23,10 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import id.fahrizal.krlcommuterline.R
-import id.fahrizal.krlcommuterline.ui.find.route.FindScreen
-import id.fahrizal.krlcommuterline.ui.find.route.FindRouteViewModel
-import id.fahrizal.krlcommuterline.ui.find.station.FindStationScreen
-import id.fahrizal.krlcommuterline.ui.find.station.FindStationViewModel
+import id.fahrizal.krlcommuterline.ui.route.find.FindScreen
+import id.fahrizal.krlcommuterline.ui.route.find.FindRouteViewModel
+import id.fahrizal.krlcommuterline.ui.station.find.FindStationScreen
+import id.fahrizal.krlcommuterline.ui.station.find.FindStationViewModel
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @OptIn(ExperimentalMaterial3Api::class)

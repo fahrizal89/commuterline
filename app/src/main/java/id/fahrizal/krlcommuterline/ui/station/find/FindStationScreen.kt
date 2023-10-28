@@ -1,4 +1,4 @@
-package id.fahrizal.krlcommuterline.ui.find.station
+package id.fahrizal.krlcommuterline.ui.station.find
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column

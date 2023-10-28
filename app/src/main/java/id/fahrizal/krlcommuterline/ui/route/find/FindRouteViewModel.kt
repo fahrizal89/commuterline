@@ -1,10 +1,10 @@
-package id.fahrizal.krlcommuterline.ui.find.route
+package id.fahrizal.krlcommuterline.ui.route.find
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
-import id.fahrizal.krlcommuterline.ui.find.route.mapper.StationCardCodeMapper.filterDestinationAndSetColor
-import id.fahrizal.krlcommuterline.ui.find.route.mapper.StationCardMapper.toStationCards
+import id.fahrizal.krlcommuterline.ui.route.find.mapper.StationCardCodeMapper.filterDestinationAndSetColor
+import id.fahrizal.krlcommuterline.ui.route.find.mapper.StationCardMapper.toStationCards
 import id.fahrizal.krlcommuterline.domain.model.StationCard
 import id.fahrizal.krlcommuterline.domain.usecase.FindShortestRoute
 import id.fahrizal.krlcommuterline.domain.usecase.InitRoute
