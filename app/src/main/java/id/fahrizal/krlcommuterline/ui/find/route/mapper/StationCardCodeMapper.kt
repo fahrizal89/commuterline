@@ -1,4 +1,4 @@
-package id.fahrizal.krlcommuterline.domain.mapper
+package id.fahrizal.krlcommuterline.ui.find.route.mapper
 
 import id.fahrizal.krlcommuterline.domain.model.StationCard
 import id.fahrizal.krlcommuterline.domain.model.StepCardState
@@ -26,20 +26,25 @@ object StationCardCodeMapper {
             //set color
             when(currentStationCard.state){
                 StepCardState.START -> {
-                    currentStationCard.lineColor = StationLineColorMapper.getLineColor(currentStationCard.next.stationCodes[0])
+                    currentStationCard.lineColor =
+                        StationLineColorMapper.getLineColor(currentStationCard.next.stationCodes[0])
                 }
 
                 StepCardState.STRAIGHT -> {
-                    currentStationCard.lineColor = StationLineColorMapper.getLineColor(currentStationCard.next.stationCodes[0])
+                    currentStationCard.lineColor =
+                        StationLineColorMapper.getLineColor(currentStationCard.next.stationCodes[0])
                 }
 
                 StepCardState.TRANSIT -> {
-                    currentStationCard.lineColor = StationLineColorMapper.getLineColor(prevStationCard.next.stationCodes[0])
-                    currentStationCard.lineTransitColor = StationLineColorMapper.getLineColor(currentStationCard.next.stationCodes[0])
+                    currentStationCard.lineColor =
+                        StationLineColorMapper.getLineColor(prevStationCard.next.stationCodes[0])
+                    currentStationCard.lineTransitColor =
+                        StationLineColorMapper.getLineColor(currentStationCard.next.stationCodes[0])
                 }
 
                 StepCardState.END -> {
-                    currentStationCard.lineColor = StationLineColorMapper.getLineColor(prevStationCard.next.stationCodes[0])
+                    currentStationCard.lineColor =
+                        StationLineColorMapper.getLineColor(prevStationCard.next.stationCodes[0])
                 }
             }
 
@@ -48,7 +53,8 @@ object StationCardCodeMapper {
         this[0].let { firstStation->
             firstStation.groupIndex = currentGroup
             firstStation.next.name = firstStation.next.stationCodes.getAllDestinationNames()
-            firstStation.lineColor = StationLineColorMapper.getLineColor(firstStation.next.stationCodes[0])
+            firstStation.lineColor =
+                StationLineColorMapper.getLineColor(firstStation.next.stationCodes[0])
         }
 
         return this

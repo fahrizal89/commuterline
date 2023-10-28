@@ -1,4 +1,4 @@
-package id.fahrizal.krlcommuterline.domain.mapper
+package id.fahrizal.krlcommuterline.ui.find.route.mapper
 
 import id.fahrizal.krlcommuterline.data.model.Station
 import id.fahrizal.krlcommuterline.data.model.StationResult

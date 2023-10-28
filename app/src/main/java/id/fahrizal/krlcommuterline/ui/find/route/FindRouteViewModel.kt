@@ -3,6 +3,8 @@ package id.fahrizal.krlcommuterline.ui.find.route
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
+import id.fahrizal.krlcommuterline.ui.find.route.mapper.StationCardCodeMapper.filterDestinationAndSetColor
+import id.fahrizal.krlcommuterline.ui.find.route.mapper.StationCardMapper.toStationCards
 import id.fahrizal.krlcommuterline.domain.model.StationCard
 import id.fahrizal.krlcommuterline.domain.usecase.FindShortestRoute
 import id.fahrizal.krlcommuterline.domain.usecase.InitRoute
@@ -45,7 +47,9 @@ class FindRouteViewModel @Inject constructor(
         viewModelScope.launch(ioCoroutineDispatcher) {
             try {
                 val stationCards = findShortestRoute(stationIdFrom, stationIdTo)
-                _uiState.value = FindUiState.Loaded(stationCards)
+                _uiState.value = FindUiState.Loaded(
+                    stationCards.nodes.toStationCards().filterDestinationAndSetColor()
+                )
             }
             catch (e: Exception){
                 Timber.e(e)

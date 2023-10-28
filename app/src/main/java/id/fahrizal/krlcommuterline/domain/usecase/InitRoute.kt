@@ -2,7 +2,7 @@ package id.fahrizal.krlcommuterline.domain.usecase
 
 import id.fahrizal.krlcommuterline.data.repository.route.RouteRepository
 import id.fahrizal.krlcommuterline.data.repository.station.StationRepository
-import id.fahrizal.krlcommuterline.domain.mapper.StationMapper.toStations
+import id.fahrizal.krlcommuterline.ui.find.route.mapper.StationMapper.toStations
 import javax.inject.Inject
 
 class InitRoute @Inject constructor(
