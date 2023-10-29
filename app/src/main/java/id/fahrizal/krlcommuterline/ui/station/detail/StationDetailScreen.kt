@@ -35,7 +35,7 @@ fun StationDetailScreen(
             is StationDetailViewModel.StationDetailUiState.Loaded -> {
                 StationDetail(
                     name = state.station.name,
-                    url = "https://raw.githubusercontent.com/fahrizal89/commuterline/main/be/station_tanahabang.jpeg"
+                    url = state.station.url
                 )
             }
             is StationDetailViewModel.StationDetailUiState.Loading -> LoadingWidget()
@@ -45,7 +45,7 @@ fun StationDetailScreen(
 }
 
 @Composable
-fun StationDetail(url:String="", name:String=""){
+fun StationDetail(name:String="", url:String=""){
     Column(
         modifier = Modifier.fillMaxWidth(),
         horizontalAlignment = Alignment.CenterHorizontally
@@ -56,7 +56,7 @@ fun StationDetail(url:String="", name:String=""){
         )
         AsyncImage(
             model = ImageRequest.Builder(LocalContext.current)
-                .data(url)
+                .data(url.ifEmpty { DEFAULT_IMAGE_URL })
                 .crossfade(true)
                 .build(),
             placeholder = painterResource(R.drawable.baseline_train_24),
@@ -66,3 +66,5 @@ fun StationDetail(url:String="", name:String=""){
         )
     }
 }
+
+private const val DEFAULT_IMAGE_URL = "https://raw.githubusercontent.com/fahrizal89/commuterline/main/be/station_tanahabang.jpeg"
