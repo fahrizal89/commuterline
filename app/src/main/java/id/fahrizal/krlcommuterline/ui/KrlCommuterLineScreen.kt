@@ -102,10 +102,12 @@ fun KrlCommuterLineApp(
                 route = KrlCommuterLineScreen.StationDetail.name+"/{stationId}",
                 arguments = listOf(navArgument("stationId") { defaultValue = -1 })
             ) {
+                val stationId = it.arguments?.getInt("stationId") ?: -1
+                stationDetailViewModel.fetchStation(stationId)
+
                 StationDetailScreen(
                     modifier = Modifier.fillMaxWidth().fillMaxHeight().padding(innerPadding),
-                    stationId = it.arguments?.getInt("stationId") ?: -1,
-                    viewModel = stationDetailViewModel
+                    uiState = stationDetailViewModel.uiState
                 )
             }
         }
