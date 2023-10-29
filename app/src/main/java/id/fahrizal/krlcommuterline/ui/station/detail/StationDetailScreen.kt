@@ -1,22 +1,33 @@
 package id.fahrizal.krlcommuterline.ui.station.detail
 
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxHeight
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.viewmodel.compose.viewModel
+import id.fahrizal.krlcommuterline.ui.common.ErrorWidget
+import id.fahrizal.krlcommuterline.ui.common.LoadingWidget
 
 @Composable
 fun StationDetailScreen(
     modifier: Modifier = Modifier,
+    stationId:Int = -1,
     viewModel : StationDetailViewModel = viewModel()
 ) {
-    Column (
-        modifier = Modifier
-            .fillMaxWidth()
-            .fillMaxHeight()
-    ){
+    viewModel.fetchStation(stationId)
 
+    Column (
+        modifier = modifier
+    ){
+        when (val state = viewModel.uiState.collectAsState().value) {
+            is StationDetailViewModel.StationDetailUiState.Loaded -> StationDetail()
+            is StationDetailViewModel.StationDetailUiState.Loading -> LoadingWidget()
+            is StationDetailViewModel.StationDetailUiState.Error -> ErrorWidget(msg = state.msg)
+        }
     }
+}
+
+@Composable
+private fun StationDetail(){
+
 }
