@@ -101,7 +101,7 @@ fun KrlCommuterLineApp(
                 arguments = listOf(navArgument("stationId") { defaultValue = -1 })
             ) {
                 StationDetailScreen(
-                    modifier = Modifier.fillMaxWidth().fillMaxHeight(),
+                    modifier = Modifier.fillMaxWidth().fillMaxHeight().padding(innerPadding),
                     stationId = it.arguments?.getInt("stationId") ?: -1,
                 )
             }
@@ -137,5 +137,5 @@ enum class KrlCommuterLineScreen(@StringRes val title: Int) {
     FindRouteLine(title = R.string.app_name),
     FindStationDeparture(title = R.string.find_station),
     FindStationDestination(title = R.string.find_station),
-    StationDetail(title = R.string.station_detail),
+    StationDetail(title = R.string.station_detail_title),
 }
