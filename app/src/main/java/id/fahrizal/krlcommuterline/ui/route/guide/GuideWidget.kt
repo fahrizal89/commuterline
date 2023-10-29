@@ -28,7 +28,11 @@ fun GuideWidget (
 
         items(items = StationCards, key = { it.index }) { stationCard->
             val paddingLeft = (stationCard.groupIndex - minGroupIndex) * 40
-            Column(modifier = Modifier.clickable { onClick(stationCard.id) }) {
+            Column(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .clickable { onClick(stationCard.id) }
+            ) {
                 when (stationCard.state){
                     StepCardState.START -> GuideItemStart(
                         name = stationCard.name,
