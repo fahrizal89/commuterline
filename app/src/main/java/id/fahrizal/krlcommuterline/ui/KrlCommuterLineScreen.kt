@@ -28,6 +28,7 @@ import id.fahrizal.krlcommuterline.R
 import id.fahrizal.krlcommuterline.ui.route.find.FindScreen
 import id.fahrizal.krlcommuterline.ui.route.find.FindRouteViewModel
 import id.fahrizal.krlcommuterline.ui.station.detail.StationDetailScreen
+import id.fahrizal.krlcommuterline.ui.station.detail.StationDetailViewModel
 import id.fahrizal.krlcommuterline.ui.station.find.FindStationScreen
 import id.fahrizal.krlcommuterline.ui.station.find.FindStationViewModel
 
@@ -37,6 +38,7 @@ import id.fahrizal.krlcommuterline.ui.station.find.FindStationViewModel
 fun KrlCommuterLineApp(
     findRouteViewModel: FindRouteViewModel = viewModel(),
     findStationViewModel: FindStationViewModel = viewModel(),
+    stationDetailViewModel: StationDetailViewModel = viewModel()
 ) {
     val navController = rememberNavController()
     val backStackEntry by navController.currentBackStackEntryAsState()
@@ -103,6 +105,7 @@ fun KrlCommuterLineApp(
                 StationDetailScreen(
                     modifier = Modifier.fillMaxWidth().fillMaxHeight().padding(innerPadding),
                     stationId = it.arguments?.getInt("stationId") ?: -1,
+                    viewModel = stationDetailViewModel
                 )
             }
         }

@@ -67,4 +67,4 @@ fun StationDetail(name:String="", url:String=""){
     }
 }
 
-private const val DEFAULT_IMAGE_URL = "https://raw.githubusercontent.com/fahrizal89/commuterline/main/be/station_tanahabang.jpeg"
+private const val DEFAULT_IMAGE_URL = "https://raw.githubusercontent.com/fahrizal89/commuterline/main/be/station_default.webp"
