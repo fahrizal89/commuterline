@@ -33,8 +33,6 @@ class StationDetailViewModel @Inject constructor(
                     _uiState.value = StationDetailUiState.Loaded(it)
                 }
         }
-
-        _uiState.value = StationDetailUiState.Loaded()
     }
 
     sealed class StationDetailUiState {
