@@ -13,25 +13,22 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
-import androidx.lifecycle.viewmodel.compose.viewModel
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import id.fahrizal.krlcommuterline.R
 import id.fahrizal.krlcommuterline.ui.common.ErrorWidget
 import id.fahrizal.krlcommuterline.ui.common.LoadingWidget
+import kotlinx.coroutines.flow.StateFlow
 
 @Composable
 fun StationDetailScreen(
     modifier: Modifier = Modifier,
-    stationId:Int = -1,
-    viewModel : StationDetailViewModel = viewModel()
+    uiState: StateFlow<StationDetailViewModel.StationDetailUiState>
 ) {
-    viewModel.fetchStation(stationId)
-
     Column (
         modifier = modifier
     ){
-        when (val state = viewModel.uiState.collectAsState().value) {
+        when (val state = uiState.collectAsState().value) {
             is StationDetailViewModel.StationDetailUiState.Loaded -> {
                 StationDetail(
                     name = state.station.name,
