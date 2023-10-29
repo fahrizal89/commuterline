@@ -2,6 +2,7 @@ package id.fahrizal.krlcommuterline.ui
 
 import android.annotation.SuppressLint
 import androidx.annotation.StringRes
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
@@ -22,9 +23,11 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
 import id.fahrizal.krlcommuterline.R
 import id.fahrizal.krlcommuterline.ui.route.find.FindScreen
 import id.fahrizal.krlcommuterline.ui.route.find.FindRouteViewModel
+import id.fahrizal.krlcommuterline.ui.station.detail.StationDetailScreen
 import id.fahrizal.krlcommuterline.ui.station.find.FindStationScreen
 import id.fahrizal.krlcommuterline.ui.station.find.FindStationViewModel
 
@@ -38,7 +41,7 @@ fun KrlCommuterLineApp(
     val navController = rememberNavController()
     val backStackEntry by navController.currentBackStackEntryAsState()
     val currentScreen = KrlCommuterLineScreen.valueOf(
-        backStackEntry?.destination?.route ?: KrlCommuterLineScreen.FindRouteLine.name
+        backStackEntry?.destination?.route?.split("/")?.get(0) ?: KrlCommuterLineScreen.FindRouteLine.name
     )
 
     Scaffold(
@@ -64,6 +67,9 @@ fun KrlCommuterLineApp(
                     onTxtDestinationClicked = {
                         navController.navigate(KrlCommuterLineScreen.FindStationDestination.name)
                     },
+                    onStationClicked = { stationId->
+                        navController.navigate(KrlCommuterLineScreen.StationDetail.name+"/"+stationId)
+                    },
                     modifier = Modifier.fillMaxWidth().padding(innerPadding)
                 )
             }
@@ -87,6 +93,16 @@ fun KrlCommuterLineApp(
                         findRouteViewModel.setStationDestination(id, name)
                         navController.navigateUp()
                     }
+                )
+            }
+
+            composable(
+                route = KrlCommuterLineScreen.StationDetail.name+"/{stationId}",
+                arguments = listOf(navArgument("stationId") { defaultValue = -1 })
+            ) {
+                StationDetailScreen(
+                    modifier = Modifier.fillMaxWidth().fillMaxHeight(),
+                    stationId = it.arguments?.getInt("stationId") ?: -1,
                 )
             }
         }
@@ -121,4 +137,5 @@ enum class KrlCommuterLineScreen(@StringRes val title: Int) {
     FindRouteLine(title = R.string.app_name),
     FindStationDeparture(title = R.string.find_station),
     FindStationDestination(title = R.string.find_station),
+    StationDetail(title = R.string.station_detail),
 }

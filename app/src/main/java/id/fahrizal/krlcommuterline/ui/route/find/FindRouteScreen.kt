@@ -28,7 +28,8 @@ fun FindScreen (
     modifier: Modifier = Modifier,
     viewModel: FindRouteViewModel = viewModel(),
     onTxtDepartureClicked: ()->Unit = {},
-    onTxtDestinationClicked: ()->Unit = {}
+    onTxtDestinationClicked: ()->Unit = {},
+    onStationClicked: (Int)->Unit = {},
 ){
     var departureId by rememberSaveable { mutableStateOf(-1) }
     var departureName by rememberSaveable { mutableStateOf("") }
@@ -72,7 +73,7 @@ fun FindScreen (
         Divider(modifier = Modifier.padding(top = 8.dp))
 
         when (val state = viewModel.uiState.collectAsState().value) {
-            is FindRouteViewModel.FindUiState.Loaded -> GuideWidget(state.stationCards)
+            is FindRouteViewModel.FindUiState.Loaded -> GuideWidget(state.stationCards, onStationClicked)
             is FindRouteViewModel.FindUiState.Loading -> LoadingWidget()
             is FindRouteViewModel.FindUiState.Error -> ErrorWidget(msg = state.msg)
             is FindRouteViewModel.FindUiState.SelectedStationDeparture -> {

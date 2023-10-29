@@ -46,5 +46,5 @@ fun ScreenPreview() {
             StationCard(3, 3,"Kebayoran",next = StationCardBranch(1, "Serpong",ArrayList<String>().apply { add("1-18") }), state = StepCardState.END, groupIndex = 1)
         )
     }
-    GuideWidget(stops)
+    GuideWidget(stops, {})
 }
