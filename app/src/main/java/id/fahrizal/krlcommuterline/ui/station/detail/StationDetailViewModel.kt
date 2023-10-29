@@ -17,6 +17,8 @@ class StationDetailViewModel @Inject constructor(
 
     fun fetchStation(id:Int) {
         id.toString()
+
+        _uiState.value = StationDetailUiState.Loaded()
     }
 
     sealed class StationDetailUiState {
