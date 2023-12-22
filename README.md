@@ -20,6 +20,6 @@ How to install:
 - Build and Run in your device
 
 I also create a mobile app based on this template code. Please check link below:
-https://play.google.com/store/games
+[https://play.google.com/store/games](https://play.google.com/store/apps/details?id=id.transj)https://play.google.com/store/apps/details?id=id.transj
 
 Thank You!
